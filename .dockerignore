@@ -1,0 +1,42 @@
+# Build context = repo root (deploy/Dockerfile). Keep it lean and never bake
+# host build artifacts or secrets into the image — everything is rebuilt inside
+# the container from source + the committed root lockfile.
+
+.git
+.gitignore
+.gitattributes
+
+# Dependencies — reinstalled with `npm ci` inside the image.
+node_modules
+**/node_modules
+
+# Build output — regenerated during the image build.
+apps/courses/.next
+apps/courses/out
+apps/courses/content/.generated
+apps/tutor/dist
+**/dist
+*.tsbuildinfo
+
+# Read-only legacy reference clones (git-ignored; never needed in an image).
+legacy/
+
+# Secrets — injected at deploy time via env_file / compose, never baked in.
+.env
+.env.*
+!.env.example
+
+# Test / tooling artifacts.
+**/playwright-report
+**/test-results
+coverage
+*.log
+
+# IDE / OS noise.
+.vscode
+.idea
+.DS_Store
+*.swp
+
+# Docs are not needed at runtime.
+*.md

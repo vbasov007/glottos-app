@@ -1,0 +1,94 @@
+# Production compose for a single DigitalOcean droplet (Docker-based deploy,
+# mirroring how glottos-courses is containerized). Three long-running services
+# behind one nginx, plus an on-demand `migrate` job. The database is EXTERNAL
+# (managed Postgres) — there is deliberately NO db service here; both app
+# processes connect to it via the one DATABASE_URL in ../.env.
+#
+#   Bring up (from the repo root):
+#     cp deploy/.env.example .env && $EDITOR .env      # fill DATABASE_URL etc.
+#     docker compose --env-file .env -f deploy/docker-compose.prod.yml up -d --build
+#
+#   First-time DB setup (schema + optional legacy import):
+#     docker compose --env-file .env -f deploy/docker-compose.prod.yml \
+#       --profile migrate run --rm migrate
+#
+# `--env-file .env` makes the ${VAR} build-arg substitution below read the
+# repo-root .env; `env_file: [../.env]` injects the same file into each
+# container at runtime. Both point at the one repo-root .env.
+
+services:
+  # ---- courses: Next.js standalone under /courses -----------------------
+  courses:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+      target: courses
+      args:
+        # NEXT_PUBLIC_* + SITE_URL are inlined at build time (see Dockerfile).
+        NEXT_PUBLIC_GOOGLE_CLIENT_ID: ${NEXT_PUBLIC_GOOGLE_CLIENT_ID:-}
+        NEXT_PUBLIC_BASE_PATH: ${NEXT_PUBLIC_BASE_PATH:-/courses}
+        NEXT_PUBLIC_POSTHOG_KEY: ${NEXT_PUBLIC_POSTHOG_KEY:-}
+        NEXT_PUBLIC_POSTHOG_HOST: ${NEXT_PUBLIC_POSTHOG_HOST:-}
+        NEXT_PUBLIC_TUTOR_URL: ${NEXT_PUBLIC_TUTOR_URL:-}
+        NEXT_PUBLIC_TMA_DEFAULT_TARGET: ${NEXT_PUBLIC_TMA_DEFAULT_TARGET:-}
+        SITE_URL: ${SITE_URL:-}
+    image: glottos-courses:latest
+    env_file:
+      - ../.env
+    environment:
+      PORT: "8080"
+      HOSTNAME: "0.0.0.0"
+    expose:
+      - "8080"
+    restart: unless-stopped
+
+  # ---- tutor: Express (tsx) serving the SPA + /api at the root ----------
+  tutor:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+      target: tutor
+      args:
+        # GOOGLE_CLIENT_ID is inlined into the SPA bundle by vite at build time.
+        GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+        COURSES_URL: ${COURSES_URL:-}
+    image: glottos-tutor:latest
+    env_file:
+      - ../.env
+    environment:
+      PORT: "4000"
+    expose:
+      - "4000"
+    restart: unless-stopped
+
+  # ---- nginx: single origin, path-based routing, TLS termination -------
+  nginx:
+    image: nginx:1.27-alpine
+    depends_on:
+      - courses
+      - tutor
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.prod.conf:/etc/nginx/conf.d/default.conf:ro
+      # TLS certs + ACME webroot (populated by certbot on the host — see
+      # DEPLOY_DROPLET.md). Comment out until certs exist to run plain HTTP.
+      - ./certs:/etc/letsencrypt:ro
+      - ./certbot-webroot:/var/www/certbot:ro
+    restart: unless-stopped
+
+  # ---- migrate: one-off schema init + optional legacy import -----------
+  # Not started by `up`; run explicitly:
+  #   docker compose ... --profile migrate run --rm migrate
+  migrate:
+    profiles:
+      - migrate
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+      target: migrate
+    image: glottos-migrate:latest
+    env_file:
+      - ../.env
+    restart: "no"
