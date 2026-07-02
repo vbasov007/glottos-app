@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { resolveIdentities, identityKeys, type LegacyUserLike } from '../src/dedup.js';
+import { resolveIdentities, identityKeys, type LegacyUserLike } from '../src/dedup';
 
 // courses: id = google sub (or "tg-<id>"); no google_sub column, email NOT NULL.
 const cUser = (o: Partial<LegacyUserLike> & { id: string }): LegacyUserLike => ({

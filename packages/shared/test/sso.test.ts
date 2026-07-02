@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { signSsoToken, verifySsoToken } from '../src/sso.js';
+import { signSsoToken, verifySsoToken } from '../src/sso';
 
 const SECRET = 'test-secret-at-least-32-bytes-long-xxxxxx';
 
