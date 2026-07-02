@@ -6,7 +6,7 @@ import type { Lesson } from '../lib/content-types';
 
 const OUT = path.resolve(__dirname, '..', 'content', '.generated');
 const readLesson = (lang: string, n: number): Lesson =>
-  JSON.parse(readFileSync(path.join(OUT, `de.${lang}`, 'lessons', `${n}.json`), 'utf8'));
+  JSON.parse(readFileSync(path.join(OUT, 'classic50', `de.${lang}`, 'lessons', `${n}.json`), 'utf8'));
 
 describe('classifySection', () => {
   it('intro variants (3 langs)', () => {

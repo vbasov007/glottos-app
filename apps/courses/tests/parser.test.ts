@@ -9,15 +9,17 @@ function readJson(p: string): any {
 }
 
 describe('content build smoke tests', () => {
-  it('manifest has all 3 native pairs', () => {
+  it('manifest has the classic50 German native pairs', () => {
+    // NOTE: the source content has grown well beyond the original 3 pairs (the
+    // manifest now lists every target/native course, plus losreden50), and the
+    // generated tree is nested by course slug. This checks the three classic50
+    // German pairs this suite exercises rather than an exact total count.
     const m = readJson('manifest.json');
-    expect(m.courses.length).toBe(3);
-    expect(m.courses.map((c: any) => c.courseKey).sort()).toEqual([
-      'de.en',
-      'de.pl',
-      'de.ru',
-    ]);
-    for (const c of m.courses) {
+    const c50 = m.courses.filter(
+      (c: any) => c.course === 'classic50' && ['de.en', 'de.pl', 'de.ru'].includes(c.courseKey),
+    );
+    expect(c50.map((c: any) => c.courseKey).sort()).toEqual(['de.en', 'de.pl', 'de.ru']);
+    for (const c of c50) {
       expect(c.lessonCount).toBe(50);
       expect(c.testCount).toBe(50);
       expect(c.textCount).toBe(150);
@@ -26,7 +28,7 @@ describe('content build smoke tests', () => {
   });
 
   it('lesson 1 en has correct title and 5 exercises', () => {
-    const l = readJson('de.en/lessons/1.json');
+    const l = readJson('classic50/de.en/lessons/1.json');
     expect(l.n).toBe(1);
     expect(l.title).toMatch(/^Lesson 1: /);
     expect(l.vocabSubtitle).toMatch(/^Vocabulary: /);
@@ -36,7 +38,7 @@ describe('content build smoke tests', () => {
   });
 
   it('lesson 9 en (Akkusativ) has gender column in vocab', () => {
-    const l = readJson('de.en/lessons/9.json');
+    const l = readJson('classic50/de.en/lessons/9.json');
     expect(l.vocab.length).toBeGreaterThan(15);
     const withGender = l.vocab.filter((v: any) => v.gender);
     expect(withGender.length).toBeGreaterThan(15);
@@ -44,7 +46,7 @@ describe('content build smoke tests', () => {
   });
 
   it('test 1 en has 30 prompts and 30 answers', () => {
-    const t = readJson('de.en/tests/1.json');
+    const t = readJson('classic50/de.en/tests/1.json');
     expect(t.prompts.length).toBe(30);
     expect(t.answers.length).toBe(30);
     expect(t.answers[0].canonical).toBe('Hallo!');
@@ -52,7 +54,7 @@ describe('content build smoke tests', () => {
   });
 
   it('test 45 en alternate-answer parsing strips italics', () => {
-    const t = readJson('de.en/tests/45.json');
+    const t = readJson('classic50/de.en/tests/45.json');
     expect(t.answers.length).toBe(30);
     const ans10 = t.answers[9];
     expect(ans10.canonical).not.toMatch(/^\*/);
@@ -65,14 +67,14 @@ describe('content build smoke tests', () => {
   });
 
   it('text 1a en has 30 sentences and a vocab table', () => {
-    const t = readJson('de.en/texts/1-a.json');
+    const t = readJson('classic50/de.en/texts/1-a.json');
     expect(t.sentences.length).toBe(30);
     expect(t.sentences[0]).toBe('Hallo!');
     expect(t.vocab.length).toBeGreaterThan(5);
   });
 
   it('dictionary en has ~2333 entries with proper lemmas', () => {
-    const d = readJson('de.en/dictionary.json');
+    const d = readJson('classic50/de.en/dictionary.json');
     expect(d.totalEntries).toBeGreaterThan(2000);
     const arzt = d.entries.find((e: any) => e.german === 'der Arzt');
     expect(arzt).toBeDefined();
@@ -82,7 +84,7 @@ describe('content build smoke tests', () => {
   });
 
   it('curriculum en has 6 blocks with rank labels for blocks 1-5', () => {
-    const c = readJson('de.en/curriculum.json');
+    const c = readJson('classic50/de.en/curriculum.json');
     expect(c.blocks.length).toBe(6);
     expect(c.blocks[0].rankLabel).toMatch(/Knappe/);
     expect(c.blocks[4].rankLabel).toMatch(/König/);
@@ -91,7 +93,7 @@ describe('content build smoke tests', () => {
 
   it('all 3 languages have consistent structure', () => {
     for (const native of ['ru', 'en', 'pl']) {
-      const idx = readJson(`de.${native}/index.json`);
+      const idx = readJson(`classic50/de.${native}/index.json`);
       expect(idx.lessons.length).toBe(50);
       expect(idx.tests.length).toBe(50);
       expect(idx.texts.length).toBe(150);

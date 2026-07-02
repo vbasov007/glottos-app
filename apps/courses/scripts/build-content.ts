@@ -42,7 +42,11 @@ import type {
 import { COURSES } from '../lib/content-types';
 
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
-const ROOT = path.resolve(SCRIPT_DIR, '..', '..');
+// In the merged monorepo the courses app lives at apps/courses/ and its content
+// sources are a LOCAL subdir (apps/courses/courses), not a repo-root sibling as
+// in the legacy `web/` layout. ROOT is therefore the app dir (one level up from
+// scripts/), so COURSES_DIR resolves to apps/courses/courses.
+const ROOT = path.resolve(SCRIPT_DIR, '..');
 const COURSES_DIR = path.join(ROOT, 'courses');
 const OUT_DIR = path.join(SCRIPT_DIR, '..', 'content', '.generated');
 

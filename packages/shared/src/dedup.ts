@@ -134,11 +134,13 @@ export function resolveIdentities(
     if (existing) {
       const incoming = baseRow(u, k, existing.id);
       const prefer = src === 'tutor' ? 'b' : 'a';
+      // Admin is sticky: if EITHER side is admin the merged account is admin.
+      const isAdmin = existing.row.role === 'admin' || (u.role ?? '') === 'admin';
       for (const col of Object.keys(incoming)) {
         if (col === 'id') continue;
         existing.row[col] = coalesce(existing.row[col], incoming[col], prefer);
       }
-      if ((u.role ?? '') === 'admin') existing.row.role = 'admin';
+      if (isAdmin) existing.row.role = 'admin';
       if (k.gsub) existing.row.google_sub = k.gsub;
       if (k.tgid) existing.row.telegram_id = k.tgid;
       if (src === 'courses') existing.fromCourses = u.id;
