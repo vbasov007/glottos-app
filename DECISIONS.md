@@ -68,3 +68,34 @@ Newest decisions are appended as work proceeds.
 - **Reuse the existing `glottos-app` git repo** as the "fresh" repo (it had a single
   stale Docker-deployment commit, now superseded) rather than re-initialising —
   preserves the already-written `.env.example`/`.gitignore` groundwork.
+
+## Build/wiring decisions (Phases 2–3)
+
+- **Local sso.ts files are thin adapters, not copies** — each app keeps its exact
+  public API shape (courses' `VerifyResult` union; tutor's `verifySsoToken(token)`)
+  by delegating to the one shared crypto core. Satisfies "both import shared" while
+  changing zero route logic, and fixes the legacy `typ:'JWT'` vs `typ:'SSO'` drift.
+- **`@glottos/shared` ships TypeScript source (no build step)** with
+  `moduleResolution: Bundler` + extensionless imports — resolves identically under
+  Next/webpack (`transpilePackages`), Vite/Vitest, and tsx. (`.js`-suffixed imports
+  worked for tsx/vitest but broke Next's webpack.)
+- **courses served under `/courses` via Next `basePath`; only raw `fetch('/api')`
+  calls were prefixed** (`lib/api-base.ts` `withBase`, + the GSI `login_uri` and the
+  post-login redirect) — `basePath` handles pages/links/assets natively.
+- **Tutor stays at the root unchanged** — no rebasing of its 62 raw `/api` calls or
+  pathname router; it keeps `/`, `/api/*`, `/s/:code`.
+- **`build-content.ts` ROOT changed to the app dir** — content sources are now a
+  local subdir (`apps/courses/courses`) because the app sits two levels below the
+  repo root, not one (legacy `web/` layout). Sibling content-authoring scripts use
+  the same pattern and would need the same one-line change if run.
+- **Two stale courses content tests fixed, not deleted** — they referenced a flat
+  `de.en/...` layout and an exact 3-course count that predate the course-nesting +
+  content growth; they fail identically in the untouched legacy repo. Updated to the
+  nested `classic50/<courseKey>` layout and a targeted count assertion.
+- **Admin role is sticky in dedup** — if either legacy account for a merged identity
+  is admin, the unified user is admin (a non-admin second side must not clobber it).
+- **pm2 chosen as the process manager** (the brief's example) over the legacy
+  supervisord-in-Docker; nginx + two Node processes, no container required.
+- **Data migration reads two temp `*_SRC` DBs, writes only the unified DB** — never
+  mutates legacy; users upsert fills gaps via COALESCE, product inserts are
+  `ON CONFLICT DO NOTHING`, so the whole run is idempotent.
