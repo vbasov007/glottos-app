@@ -14,3 +14,11 @@ export {
 } from './session.js';
 export { googleClientId, ssoConfigured, requireEnv } from './env.js';
 export { log } from './log.js';
+export {
+  resolveIdentities,
+  identityKeys,
+  type Src,
+  type LegacyUserLike,
+  type UnifiedUser,
+  type ResolveResult,
+} from './dedup.js';

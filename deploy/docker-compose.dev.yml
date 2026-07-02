@@ -1,0 +1,29 @@
+# Local development database for the merged app — ONE Postgres, ONE database
+# shared by both apps (replaces the two separate legacy dev DBs).
+#
+#   docker compose -f deploy/docker-compose.dev.yml up -d
+#   export DATABASE_URL=postgresql://glottos:glottos@localhost:5433/glottos
+#   npm run db:init      # apply migrations/001_unified_schema.sql
+#
+# Port 5433 avoids clashing with a system Postgres on 5432 and with the two
+# legacy dev ports (courses 55432, tutor 54320).
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: glottos-pg
+    environment:
+      POSTGRES_USER: glottos
+      POSTGRES_PASSWORD: glottos
+      POSTGRES_DB: glottos
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - glottos-pg-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U glottos -d glottos"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  glottos-pg-data:
