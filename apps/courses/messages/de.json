@@ -1,0 +1,301 @@
+{
+  "common": {
+    "appName": "Glottos Matrix",
+    "loading": "Wird geladen…",
+    "comingSoon": "Bald verfügbar",
+    "close": "Schließen",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "targetIn": {
+      "de": "auf Deutsch",
+      "fr": "auf Französisch",
+      "es": "auf Spanisch",
+      "sr": "auf Serbisch",
+      "ka": "auf Georgisch",
+      "he": "auf Hebräisch",
+      "en": "auf Englisch",
+      "it": "auf Italienisch"
+    }
+  },
+  "nav": {
+    "course": "Kurse",
+    "dictionary": "Wörterbuch",
+    "progress": "Fortschritt",
+    "settings": "Einstellungen",
+    "dictionaryShort": "Wb.",
+    "tutor": "Audio-Tutor",
+    "signOut": "Abmelden"
+  },
+  "landing": {
+    "headline": "Glottos Matrix",
+    "subtitlePrefix": "Französisch für",
+    "subtitleSuffix": "sprachige · strukturierter Kurs",
+    "startCta": "Kurs öffnen",
+    "startSubtitle": "50 Lektionen · 50 Tests · 150 Hörtexte",
+    "referenceCta": "Wörterbuch",
+    "referenceSubtitle": "über 2 300 französische Wörter",
+    "notYourLanguage": "Nicht deine Sprache? Wechseln:",
+    "motto": "5 % Regel verstehen. 95 % den Mund trainieren.",
+    "mottoLine2": "Sprache ist Sport. Mund auf und sprechen."
+  },
+  "courseSelection": {
+    "heading": "Kurs wählen",
+    "none": "Für diese Sprachkombination sind noch keine Kurse verfügbar.",
+    "lessonsLabel": "Lektionen",
+    "testsLabel": "Tests",
+    "textsLabel": "Texte",
+    "entriesLabel": "Wörterbucheinträge"
+  },
+  "courseNames": {
+    "classic50": "Classic 50",
+    "losreden50": "Loslegen 50 — Sprechfluss-Strecke"
+  },
+  "courseHome": {
+    "lessonLabel": "Lektion",
+    "rankLabel": "Rang",
+    "testAfter": "▶ Test nach Lektion",
+    "comingSoon": "bald",
+    "previewBanner": "Kurs in Arbeit: Lektion 1 ist verfügbar, die übrigen werden geschrieben.",
+    "introTitle": "Einführung",
+    "introSubtitle": "Wie der Kurs funktioniert — vor Lektion 1 lesen.",
+    "introOpen": "Öffnen"
+  },
+  "courseIntro": {
+    "backToCourse": "Zurück zum Kurs"
+  },
+  "courseUnavailable": {
+    "title": "{course} — bald verfügbar",
+    "message": "Dieser Kurs ist in deiner Sprache ({native}) noch nicht verfügbar. Wir arbeiten daran.",
+    "availableIn": "Verfügbar auf",
+    "otherCourses": "Andere Kurse für diese Zielsprache ansehen"
+  },
+  "lesson": {
+    "backToCourse": "← Zur Kursübersicht",
+    "prev": "Vorherige Lektion",
+    "next": "Nächste Lektion",
+    "tabs": {
+      "theory": "Theorie",
+      "vocabulary": "Wörter lernen",
+      "writing": "Übungen",
+      "moreExercises": "Zusätzliche Übungen",
+      "audio": "Audio-Praxis",
+      "cheatsheet": "Spickzettel"
+    },
+    "nextStep": "Weiter",
+    "nextLesson": "Nächste Lektion",
+    "locked": "Anmelden",
+    "tabDone": "✓",
+    "markComplete": "Lektion als abgeschlossen markieren",
+    "completed": "✓ Lektion abgeschlossen",
+    "uncomplete": "Rückgängig",
+    "showKey": "Lösung zeigen",
+    "hideKey": "Lösung verbergen",
+    "checkAnswer": "Prüfen",
+    "showAnswer": "Antwort zeigen",
+    "checking": "…",
+    "verdict": {
+      "correct": "Richtig",
+      "correctAlternate": "Richtig (Variante akzeptiert)",
+      "wrong": "Nicht ganz",
+      "aiJudged": "KI-bewertet",
+      "warningCase": "Akzeptiert, aber achte auf Groß- und Kleinschreibung.",
+      "warningPunctuation": "Akzeptiert, aber achte auf Satzzeichen (Kommas, Punkte).",
+      "warningCaseAndPunctuation": "Akzeptiert, aber achte auf Groß-/Kleinschreibung und Satzzeichen.",
+      "reference": "Referenz:",
+      "couldNotCheck": "Prüfung fehlgeschlagen — bitte erneut versuchen."
+    },
+    "issueCategories": {
+      "spelling": "Rechtschreibung",
+      "wrongWord": "Falsches Wort",
+      "wordOrder": "Wortstellung",
+      "wordForm": "Form / Kasus",
+      "missingWord": "Fehlendes Wort",
+      "syntax": "Syntax"
+    },
+    "hint": {
+      "expectedShort": "Erwartet:",
+      "expectedLong": "Erwartet etwa:",
+      "or": "oder"
+    },
+    "input": {
+      "placeholder": {
+        "de": "Auf Deutsch tippen…",
+        "fr": "Auf Französisch tippen…",
+        "es": "Auf Spanisch tippen…",
+        "sr": "Auf Serbisch tippen…",
+        "ka": "Auf Georgisch tippen…",
+        "he": "Auf Hebräisch tippen…",
+        "en": "Auf Englisch tippen…",
+        "it": "Auf Italienisch tippen…"
+      }
+    },
+    "signInRequired": "Anmelden, um diesen Teil der Lektion freizuschalten. Kostenlos, und dein Fortschritt wird auf allen Geräten synchronisiert."
+  },
+  "vocab": {
+    "title": "Wortschatz dieser Lektion",
+    "entriesShort": "Einträge",
+    "german": "Französisch",
+    "gender": "Genus",
+    "native": "Übersetzung",
+    "openInGlottos": "🔊 Wörter lernen",
+    "openInGlottosTooltip": "Öffnet den Wortschatz in der externen App — Karteikarten mit Audio, Suche und Notizen.",
+    "courseDictionaryHeading": "Vollständiges Wörterbuch"
+  },
+  "writing": {
+    "intro": "Aufgabe lesen, Antwort {target} eintippen und auf Prüfen klicken. Jede Antwort wird zuerst lokal geprüft; in kniffligen Fällen gibt Claude einen Hinweis. Der Fortschritt wird automatisch gespeichert.",
+    "noExercises": "In dieser Lektion gibt es keine Schreibübungen.",
+    "openEndedNote": "Offene Übung — keine automatische Prüfung. Sag die Antworten laut und mach weiter.",
+    "openInGlottos": "🔊 Übungen",
+    "openInGlottosTooltip": "Öffnet die Übungsantworten in der externen App — mit Audio und Wort-für-Wort-Analyse."
+  },
+  "moreExercises": {
+    "intro": "Mehr Übung gewünscht? Claude erstellt aus Wortschatz und Thema dieser Lektion eine frische Übung mit 10 Aufgaben.",
+    "generateCta": "Übung erstellen",
+    "generateMore": "Noch eine erstellen",
+    "generateWritingCta": "Satzbau-Übung",
+    "generateListeningCta": "Hörübung erstellen",
+    "generating": "Wird erstellt…",
+    "error": "Erstellung fehlgeschlagen. Bitte erneut versuchen.",
+    "capReached": "Limit pro Lektion erreicht",
+    "counter": "Erstellt: {n} von {max}",
+    "delete": "Übung löschen",
+    "confirmDelete": "Diese erstellte Übung und alle Antworten dazu löschen?",
+    "listeningPrompt": "Hören und mitschreiben",
+    "difficulty": "Schwierigkeit {level}/10"
+  },
+  "similarPrompt": {
+    "cta": "Noch eines wie dieses",
+    "generating": "Wird erstellt…",
+    "error": "Konnte nicht erstellt werden. Bitte erneut versuchen."
+  },
+  "openEndedSample": {
+    "reveal": "Musterantwort",
+    "loading": "Wird vorbereitet…",
+    "heading": "Hören und selbst überprüfen",
+    "hide": "Muster ausblenden",
+    "empty": "Für diese Aufgabe gibt es kein Muster.",
+    "error": "Muster konnte nicht erstellt werden. Bitte erneut versuchen."
+  },
+  "audio": {
+    "listeningHeading": "Hörtexte",
+    "listeningSubtitle": "Drei Textvarianten pro Lektion. In glottos.com öffnen für synchrone Audiowiedergabe.",
+    "openInGlottos": "🔊 Audio-Praxis",
+    "openInGlottosTooltip": "Öffnet diesen Text in der externen App — hören mit Synchronisierung und Tippübersetzung.",
+    "preparing": "Audio wird vorbereitet…",
+    "textLabel": "Text",
+    "glottosNote": "Die Audiowiedergabe läuft über glottos.com — öffnet sich in einem neuen Tab.",
+    "mouthHeading": "Mundtraining",
+    "mouthSubtitle": "Kernprinzip: 95 % Mundtraining. Lies jede Zeile laut. Nicht nur hinschauen — sprechen.",
+    "emptyState": "Noch keine Tonleitern oder Matrizen in dieser Lektion — die beginnen ab Lektion 3. Nutze die Hörtexte oben zum Sprechen."
+  },
+  "test": {
+    "title": "Test",
+    "backToLesson": "← Lektion",
+    "promptsLabel": "Aufgaben · 80 % zum Bestehen",
+    "answered": "beantwortet",
+    "correctSoFar": "bisher richtig",
+    "finish": "Test abschließen",
+    "tryAgain": "Erneut versuchen",
+    "complete": "Test abgeschlossen",
+    "passed": "Bestanden",
+    "tryAgainToPass": "Erneut versuchen, um zu bestehen (80 % nötig)",
+    "claimRank": "Rang beanspruchen:",
+    "review": "Durchgehen",
+    "wrongLabel": "✗ Falsch",
+    "promptLabel": "Aufgabe:",
+    "youTypedLabel": "Du hast getippt:",
+    "expectedLabel": "Erwartet:",
+    "noWrongAnswers": "Keine falschen Antworten zum Durchgehen.",
+    "pageOf": "Seite",
+    "pagePrev": "← Vorherige 10",
+    "pageNext": "Nächste 10 →"
+  },
+  "dashboard": {
+    "title": "Dein Fortschritt",
+    "subtitle": "Anmelden, um den Fortschritt im Konto zu speichern und auf jedem Gerät weiterzumachen. Ohne Anmeldung bleibt er nur in diesem Browser.",
+    "stats": {
+      "lessons": "Lektionen",
+      "testsPassed": "Bestandene Tests",
+      "dayStreak": "Tage-Serie",
+      "wordsSeen": "Gesehene Wörter",
+      "of": "von",
+      "inProgress": "in Arbeit",
+      "attempted": "versucht",
+      "keepGoing": "Weitermachen"
+    },
+    "ranks": "Ränge",
+    "rankUnlock": "Schaltet frei nach Test",
+    "goToCourse": "Zum Kurs →"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "nativeLangHeading": "Muttersprache",
+    "nativeLangSubtitle": "Die Sprache, die du sprichst — wählt Kursinhalt und Oberflächentexte.",
+    "targetLangHeading": "Zielsprache",
+    "targetLangSubtitle": "Was du lernst. Die Kacheln zeigen jede Sprache und ihren Stand.",
+    "soon": "Bald",
+    "notAvailableForTarget": "Für diese Zielsprache noch nicht verfügbar",
+    "progressHeading": "Fortschritt",
+    "progressSubtitle": "Anmelden, um den Fortschritt im Konto zu speichern und auf jedem Gerät abzurufen. Zurücksetzen ist endgültig.",
+    "exportJson": "Fortschritt exportieren (JSON)",
+    "reset": "Fortschritt zurücksetzen",
+    "resetConfirm": "Bestätigen — gesamten Fortschritt löschen",
+    "themeHeading": "Darstellung",
+    "themeSubtitle": "Farbschema wählen. „Systemvorgabe“ folgt dem Gerät.",
+    "themeLight": "Hell",
+    "themeDark": "Dunkel",
+    "themeSystem": "Systemvorgabe"
+  },
+  "dictionary": {
+    "title": "Wörterbuch des Französischkurses",
+    "entriesLabel": "Einträge",
+    "searchPlaceholder": "Suche ein Wort {target} oder auf Deutsch… (drücke / zum Fokussieren)",
+    "matches": "Treffer für",
+    "noMatches": "Treffer für",
+    "pickLetterOrSearch": "Wähle einen Buchstaben oder tippe ein Wort in die Suche.",
+    "details": {
+      "show": "Formen und Beispiel zeigen",
+      "hide": "Formen und Beispiel verbergen",
+      "button": "Details",
+      "meaning": "Bedeutung",
+      "forms": "Formen",
+      "example": "Beispiel",
+      "loading": "Wird geladen…",
+      "error": "Details konnten nicht geladen werden. Bitte erneut versuchen.",
+      "tryAi": "KI fragen",
+      "notFound": "„{word}“ sieht nicht nach einem echten Wort aus.",
+      "genderLabel": "Grammatisches Geschlecht",
+      "moreExamples": "Mehr Beispiele",
+      "generating": "Wird erstellt…",
+      "practice": "Wort üben",
+      "practicePrompt": "Übersetze:",
+      "practiceHint": "Hinweis:",
+      "practiceHintReveal": "Zum Anzeigen klicken",
+      "practiceCheck": "Prüfen",
+      "practiceShowAnswer": "Lösung zeigen",
+      "practiceGenericError": "Konnte nicht erstellt werden. Bitte erneut versuchen.",
+      "practiceCorrect": "Richtig",
+      "practiceWrong": "Nicht ganz",
+      "practiceTryAnother": "Neue Aufgabe"
+    }
+  },
+  "cefr": {
+    "vocabulary": "Wortschatz",
+    "grammar": "Grammatik",
+    "currentLevel": "Niveau {level}",
+    "completedNone": "Dein Balken füllt sich, sobald du die erste Lektion als abgeschlossen markierst.",
+    "lessonContributionIntro": "Wenn du diese Lektion abschließt, trägt sie zu deinem Gesamtfortschritt bei:"
+  },
+  "errors": {
+    "notFound": "Nicht gefunden"
+  },
+  "targetLanding": {
+    "subtitlePrefix": "Strukturierter Kurs",
+    "lessonsLine": "50 Lektionen · 50 Tests · 150 Hörtexte",
+    "pickNativeHeading": "Wähle deine Muttersprache",
+    "openCourseCta": "Kurs öffnen",
+    "signInPrompt": "Anmelden, um den Fortschritt zu speichern und auf allen Geräten zu synchronisieren. Der Kurs läuft auch ohne Anmeldung — der Fortschritt bleibt dann nur in diesem Browser.",
+    "previewBanner": "Kurs in Arbeit. {available} von 50 Lektionen verfügbar.",
+    "notAvailableHere": "In dieser Sprache noch nicht verfügbar."
+  }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>polyGlottos Embed Test</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #f0f0f0; padding: 2rem; }
+    h1 { font-size: 1.4rem; margin-bottom: 1rem; }
+    .controls { display: flex; gap: 0.5rem; margin-bottom: 1rem; align-items: center; }
+    .controls label { font-size: 0.875rem; font-weight: 500; }
+    .controls input { flex: 1; padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 6px; font-size: 0.875rem; }
+    .controls button { padding: 0.5rem 1rem; background: #4f46e5; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 0.875rem; }
+    .controls button:hover { background: #4338ca; }
+    .frame-container { border: 2px solid #ccc; border-radius: 8px; overflow: hidden; background: #fff; display: inline-block; }
+    iframe { display: block; border: none; }
+    .hint { font-size: 0.75rem; color: #666; margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+  <h1>polyGlottos — Embed Test</h1>
+  <div class="controls">
+    <label for="host">Host:</label>
+    <input id="host" type="text" value="https://t.glottos.com" style="flex:0 0 200px">
+    <label for="code">Code:</label>
+    <input id="code" type="text" placeholder="Enter share code...">
+    <label for="width">W:</label>
+    <input id="width" type="text" value="100%" style="flex:0 0 80px">
+    <label for="height">H:</label>
+    <input id="height" type="text" value="600px" style="flex:0 0 80px">
+    <button onclick="loadEmbed()">Load</button>
+  </div>
+  <div class="frame-container">
+    <iframe id="embed-frame" src="about:blank"></iframe>
+  </div>
+  <p class="hint">Enter a share code and click Load. The iframe will open <code>{host}/embed?import=CODE</code>. This page can be opened from anywhere (local file, any server).</p>
+
+  <script>
+    function loadEmbed() {
+      const code = document.getElementById('code').value.trim();
+      if (!code) return;
+      const frame = document.getElementById('embed-frame');
+      const container = document.querySelector('.frame-container');
+      const w = document.getElementById('width').value.trim() || '100%';
+      const h = document.getElementById('height').value.trim() || '600px';
+      container.style.width = w;
+      frame.style.width = '100%';
+      frame.style.height = h;
+      const host = document.getElementById('host').value.trim().replace(/\/+$/, '');
+      frame.src = host + '/embed?import=' + encodeURIComponent(code);
+    }
+    document.getElementById('code').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') loadEmbed();
+    });
+  </script>
+</body>
+</html>

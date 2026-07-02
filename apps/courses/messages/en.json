@@ -1,0 +1,301 @@
+{
+  "common": {
+    "appName": "Glottos Matrix",
+    "loading": "Loading…",
+    "comingSoon": "Coming soon",
+    "close": "Close",
+    "cancel": "Cancel",
+    "save": "Save",
+    "targetIn": {
+      "de": "in German",
+      "fr": "in French",
+      "es": "in Spanish",
+      "sr": "in Serbian",
+      "ka": "in Georgian",
+      "he": "in Hebrew",
+      "en": "in English",
+      "it": "in Italian"
+    }
+  },
+  "nav": {
+    "course": "Courses",
+    "dictionary": "Dictionary",
+    "progress": "Progress",
+    "settings": "Settings",
+    "dictionaryShort": "Dict",
+    "tutor": "Audio Tutor",
+    "signOut": "Sign out"
+  },
+  "landing": {
+    "headline": "Glottos Matrix",
+    "subtitlePrefix": "German for",
+    "subtitleSuffix": "speakers · structural course",
+    "startCta": "Open the course",
+    "startSubtitle": "50 lessons · 50 tests · 150 listening texts",
+    "referenceCta": "Dictionary",
+    "referenceSubtitle": "2,300+ German words",
+    "notYourLanguage": "Not your language? Switch:",
+    "motto": "5% understanding the rule. 95% training your mouth.",
+    "mottoLine2": "Language is a sport. Open your mouth and speak."
+  },
+  "courseSelection": {
+    "heading": "Choose a course",
+    "none": "No courses available for this language pair yet.",
+    "lessonsLabel": "lessons",
+    "testsLabel": "tests",
+    "textsLabel": "texts",
+    "entriesLabel": "dictionary entries"
+  },
+  "courseNames": {
+    "classic50": "Classic 50",
+    "losreden50": "Loslegen 50 — Fluency Track"
+  },
+  "courseHome": {
+    "lessonLabel": "Lesson",
+    "rankLabel": "Rank",
+    "testAfter": "▶ Test after lesson",
+    "comingSoon": "soon",
+    "previewBanner": "Course in progress: Lesson 1 is available, the rest are being authored.",
+    "introTitle": "Introduction",
+    "introSubtitle": "How this course works — read before Lesson 1.",
+    "introOpen": "Open"
+  },
+  "courseIntro": {
+    "backToCourse": "Back to the course"
+  },
+  "courseUnavailable": {
+    "title": "{course} — coming soon",
+    "message": "This course isn't available in your language yet ({native}). We're working on it.",
+    "availableIn": "Available in",
+    "otherCourses": "See other courses for this target"
+  },
+  "lesson": {
+    "backToCourse": "← Course home",
+    "prev": "Previous lesson",
+    "next": "Next lesson",
+    "tabs": {
+      "theory": "Theory",
+      "vocabulary": "Learn the words",
+      "writing": "Exercises",
+      "moreExercises": "Extra exercises",
+      "audio": "Audio practice",
+      "cheatsheet": "Cheat sheet"
+    },
+    "nextStep": "Next",
+    "nextLesson": "Next lesson",
+    "locked": "Sign in",
+    "tabDone": "✓",
+    "markComplete": "Mark lesson complete",
+    "completed": "✓ Lesson completed",
+    "uncomplete": "Undo",
+    "showKey": "Show key",
+    "hideKey": "Hide key",
+    "checkAnswer": "Check",
+    "showAnswer": "Show answer",
+    "checking": "…",
+    "verdict": {
+      "correct": "Correct",
+      "correctAlternate": "Correct (alternate accepted)",
+      "wrong": "Not quite",
+      "aiJudged": "AI-judged",
+      "warningCase": "Accepted, but watch capitalization (upper/lower case).",
+      "warningPunctuation": "Accepted, but watch punctuation (commas, periods).",
+      "warningCaseAndPunctuation": "Accepted, but watch capitalization and punctuation.",
+      "reference": "Reference:",
+      "couldNotCheck": "Couldn't check — try again."
+    },
+    "issueCategories": {
+      "spelling": "Spelling",
+      "wrongWord": "Wrong word",
+      "wordOrder": "Word order",
+      "wordForm": "Form / case",
+      "missingWord": "Missing word",
+      "syntax": "Syntax"
+    },
+    "hint": {
+      "expectedShort": "Expected:",
+      "expectedLong": "Expected something like:",
+      "or": "or"
+    },
+    "input": {
+      "placeholder": {
+        "de": "Type the German…",
+        "fr": "Type the French…",
+        "es": "Type the Spanish…",
+        "sr": "Type the Serbian…",
+        "ka": "Type the Georgian…",
+        "he": "Type the Hebrew…",
+        "en": "Type the English…",
+        "it": "Type the Italian…"
+      }
+    },
+    "signInRequired": "Sign in to unlock this part of the lesson. Free, and your progress syncs across devices."
+  },
+  "vocab": {
+    "title": "Lesson vocabulary",
+    "entriesShort": "entries",
+    "german": "German",
+    "gender": "Gender",
+    "native": "Translation",
+    "openInGlottos": "🔊 Learn the words",
+    "openInGlottosTooltip": "Opens the lesson vocab in the external app — flashcards with audio, search, and notes.",
+    "courseDictionaryHeading": "Full dictionary"
+  },
+  "writing": {
+    "intro": "Read the task, type your answer {target}, and hit Check. Each answer is checked locally first; tricky cases ask Claude for a hint. Progress saves automatically.",
+    "noExercises": "No writing exercises in this lesson.",
+    "openEndedNote": "Open-ended drill — no automatic check. Say the answers aloud, then move on.",
+    "openInGlottos": "🔊 Exercises",
+    "openInGlottosTooltip": "Opens the exercise answers in the external app — study with audio and word-by-word breakdown."
+  },
+  "moreExercises": {
+    "intro": "Need more practice? Claude will generate a fresh 10-prompt exercise from this lesson's vocab and theme.",
+    "generateCta": "Generate exercise",
+    "generateMore": "Generate another",
+    "generateWritingCta": "Phrase-construction exercise",
+    "generateListeningCta": "Generate listening exercise",
+    "generating": "Generating…",
+    "error": "Generation failed. Try again.",
+    "capReached": "Per-lesson limit reached",
+    "counter": "Generated: {n} of {max}",
+    "delete": "Delete exercise",
+    "confirmDelete": "Delete this generated exercise and all answers to it?",
+    "listeningPrompt": "Listen and transcribe",
+    "difficulty": "difficulty {level}/10"
+  },
+  "similarPrompt": {
+    "cta": "One more like this",
+    "generating": "Generating…",
+    "error": "Couldn't generate. Try again."
+  },
+  "openEndedSample": {
+    "reveal": "Sample answer",
+    "loading": "Preparing…",
+    "heading": "Listen and self-check",
+    "hide": "Hide sample",
+    "empty": "No sample available for this exercise.",
+    "error": "Couldn't generate the sample. Try again."
+  },
+  "audio": {
+    "listeningHeading": "Listening texts",
+    "listeningSubtitle": "Three text variants per lesson. Open in glottos.com for synchronized audio playback.",
+    "openInGlottos": "🔊 Audio practice",
+    "openInGlottosTooltip": "Opens this text in the external app — listen with sync and tap-to-translate.",
+    "preparing": "Audio preparing…",
+    "textLabel": "Text",
+    "glottosNote": "Audio playback is handled by glottos.com — opens in a new tab.",
+    "mouthHeading": "Mouth training",
+    "mouthSubtitle": "Core principle: 95% mouth training. Read each line aloud. Don't just look — speak.",
+    "emptyState": "No scales or matrices in this lesson yet — they start from Lesson 3. Use the listening texts above for speaking practice."
+  },
+  "test": {
+    "title": "Test",
+    "backToLesson": "← Lesson",
+    "promptsLabel": "prompts · 80% to pass",
+    "answered": "answered",
+    "correctSoFar": "correct so far",
+    "finish": "Finish test",
+    "tryAgain": "Try again",
+    "complete": "Test complete",
+    "passed": "Passed",
+    "tryAgainToPass": "Try again to pass (80% required)",
+    "claimRank": "Claim rank:",
+    "review": "Review",
+    "wrongLabel": "✗ Wrong",
+    "promptLabel": "Prompt:",
+    "youTypedLabel": "You typed:",
+    "expectedLabel": "Expected:",
+    "noWrongAnswers": "No wrong answers to review.",
+    "pageOf": "Page",
+    "pagePrev": "← Prev 10",
+    "pageNext": "Next 10 →"
+  },
+  "dashboard": {
+    "title": "Your progress",
+    "subtitle": "Sign in to save progress to your account and pick up on any device. Without sign-in, it stays only in this browser.",
+    "stats": {
+      "lessons": "Lessons",
+      "testsPassed": "Tests passed",
+      "dayStreak": "Day streak",
+      "wordsSeen": "Words seen",
+      "of": "of",
+      "inProgress": "in progress",
+      "attempted": "attempted",
+      "keepGoing": "Keep going"
+    },
+    "ranks": "Ranks",
+    "rankUnlock": "Unlocks after Test",
+    "goToCourse": "Go to course →"
+  },
+  "settings": {
+    "title": "Settings",
+    "nativeLangHeading": "Native language",
+    "nativeLangSubtitle": "The language you speak — selects course content and UI translations.",
+    "targetLangHeading": "Target language",
+    "targetLangSubtitle": "What you're learning. Cards show every language and its readiness.",
+    "soon": "Soon",
+    "notAvailableForTarget": "Not yet available for this target language",
+    "progressHeading": "Progress",
+    "progressSubtitle": "Sign in to save progress to your account and access it from any device. Reset is destructive.",
+    "exportJson": "Export progress (JSON)",
+    "reset": "Reset progress",
+    "resetConfirm": "Confirm — erase all progress",
+    "themeHeading": "Appearance",
+    "themeSubtitle": "Pick a colour scheme. System follows your device.",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "themeSystem": "System"
+  },
+  "dictionary": {
+    "title": "German course dictionary",
+    "entriesLabel": "entries",
+    "searchPlaceholder": "Search for a word {target} or in English… (press / to focus)",
+    "matches": "matches for",
+    "noMatches": "matches for",
+    "pickLetterOrSearch": "Pick a letter or type a word to search.",
+    "details": {
+      "show": "Show forms and example",
+      "hide": "Hide forms and example",
+      "button": "Details",
+      "meaning": "Meaning",
+      "forms": "Forms",
+      "example": "Example",
+      "loading": "Loading…",
+      "error": "Could not load details. Try again.",
+      "tryAi": "Try AI",
+      "notFound": "\"{word}\" doesn't look like a real word.",
+      "genderLabel": "Grammatical gender",
+      "moreExamples": "More examples",
+      "generating": "Generating…",
+      "practice": "Practice this word",
+      "practicePrompt": "Translate:",
+      "practiceHint": "Hint:",
+      "practiceHintReveal": "Click to reveal",
+      "practiceCheck": "Check",
+      "practiceShowAnswer": "Show answer",
+      "practiceGenericError": "Couldn't generate. Try again.",
+      "practiceCorrect": "Correct",
+      "practiceWrong": "Not quite",
+      "practiceTryAnother": "Try another"
+    }
+  },
+  "cefr": {
+    "vocabulary": "Vocabulary",
+    "grammar": "Grammar",
+    "currentLevel": "level {level}",
+    "completedNone": "Your bar will start filling as soon as you mark your first lesson complete.",
+    "lessonContributionIntro": "Completing this lesson will add to your overall progress:"
+  },
+  "errors": {
+    "notFound": "Not found"
+  },
+  "targetLanding": {
+    "subtitlePrefix": "Structural course",
+    "lessonsLine": "50 lessons · 50 tests · 150 listening texts",
+    "pickNativeHeading": "Choose your native language",
+    "openCourseCta": "Open course",
+    "signInPrompt": "Sign in to save progress and sync across devices. The course works without sign-in too — progress stays in this browser.",
+    "previewBanner": "Course in progress. {available} of 50 lessons available.",
+    "notAvailableHere": "Not yet available in this language."
+  }
+}

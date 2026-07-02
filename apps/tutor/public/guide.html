@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glottos — Getting Started Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script>try{var p=JSON.parse(localStorage.getItem('userPrefs')||'{}');if((p.theme||'dark')==='dark')document.documentElement.classList.add('dark');}catch(e){}</script>
+<style>
+:root{--ink:#18181b;--muted:#71717a;--hint:#a1a1aa;--surface:#fafafa;--border:#e4e4e7;--accent:#18181b;--accent-light:#f4f4f5;--accent-text:#3f3f46;--warm:#dc2626;--warm-light:#fef2f2;--blue:#2563eb;--blue-light:#eff6ff;--bg:#F8F9FA;}
+.dark{--ink:#fafafa;--muted:#a1a1aa;--hint:#71717a;--surface:#27272a;--border:#52525b;--accent:#e4e4e7;--accent-light:#3f3f46;--accent-text:#d4d4d8;--warm:#ef4444;--warm-light:#451a1a;--blue:#60a5fa;--blue-light:#1e293b;--bg:#09090b;}
+.dark .phase{background:#18181b;}
+.dark .cta-btn{background:#e4e4e7;color:#18181b;}
+.dark .cta-btn:hover{background:#d4d4d8;}
+.dark .phase-badge{background:#e4e4e7;color:#18181b;}
+.dark .phase-badge.b{background:#60a5fa;color:#0f172a;}
+.dark .phase-badge.w{background:#ef4444;color:#fff;}
+.dark .tip-mark{background:#e4e4e7;color:#18181b;}
+.dark .tip-mark.b{background:#60a5fa;color:#0f172a;}
+.dark .callout.warn{color:#fca5a5;}
+.dark .callout.info{color:#93c5fd;}
+.dark .screenshot{border-color:#3f3f46;box-shadow:0 1px 3px rgba(0,0,0,0.3);}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;}
+.guide{max-width:740px;margin:0 auto;padding:0 0 80px;}
+.hero{padding:56px 40px 48px;border-bottom:1px solid var(--border);}
+.hero-badge{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-text);background:var(--accent-light);border-radius:4px;padding:3px 10px;margin-bottom:20px;}
+.hero h1{font-size:32px;font-weight:600;line-height:1.22;margin-bottom:16px;letter-spacing:-.02em;}
+.hero p{font-size:16px;color:var(--muted);max-width:520px;line-height:1.65;}
+.lang-cloud{display:flex;flex-wrap:wrap;gap:6px;margin-top:26px;}
+.lang-pill{font-size:12px;padding:4px 11px;border-radius:20px;border:1px solid var(--border);color:var(--muted);background:var(--surface);white-space:nowrap;}
+.lang-pill.more{color:var(--ink);background:var(--accent-light);border-color:var(--border);font-weight:500;}
+.toc{padding:28px 40px;border-bottom:1px solid var(--border);background:var(--surface);}
+.toc-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--hint);margin-bottom:14px;}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.toc-list li{display:flex;align-items:center;gap:10px;font-size:14px;padding:4px 0;color:var(--muted);}
+.toc-num{font-size:11px;font-weight:500;width:20px;height:20px;border-radius:50%;background:var(--accent-light);color:var(--hint);display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid var(--border);}
+.section{padding:44px 40px 0;}
+.section+.section{border-top:1px solid var(--border);margin-top:44px;padding-top:44px;}
+.section-header{margin-bottom:20px;position:relative;padding-left:0;}
+.section-num{font-size:11px;font-weight:500;color:var(--hint);display:block;margin-bottom:4px;}
+.section-title{font-size:22px;font-weight:600;line-height:1.28;letter-spacing:-.01em;display:block;}
+.section-body{padding-left:0;}
+.section-body>p{font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:18px;}
+.section-body>p:last-child{margin-bottom:0;}
+.phase{margin:20px 0;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff;}
+.phase-header{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--border);background:var(--surface);}
+.phase-badge{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;padding:3px 9px;border-radius:4px;background:var(--ink);color:#fff;flex-shrink:0;}
+.phase-badge.b{background:var(--blue);color:#fff;}
+.phase-badge.w{background:var(--warm);color:#fff;}
+.phase-title{font-size:14px;font-weight:500;}
+.phase-body{padding:18px 20px;}
+.phase-body>p{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:12px;}
+.phase-body>p:last-child{margin-bottom:0;}
+.callout{border-left:3px solid var(--ink);background:var(--accent-light);border-radius:0 8px 8px 0;padding:12px 16px;margin:14px 0;font-size:14px;line-height:1.65;color:var(--accent-text);}
+.callout.warn{border-color:var(--warm);background:var(--warm-light);color:#991b1b;}
+.callout.info{border-color:var(--blue);background:var(--blue-light);color:#1e40af;}
+.callout strong{font-weight:600;}
+.ideas{display:flex;flex-direction:column;gap:8px;margin:12px 0;}
+.idea-row{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--muted);line-height:1.55;}
+.idea-dot{width:6px;height:6px;border-radius:50%;background:var(--ink);flex-shrink:0;margin-top:5px;opacity:.4;}
+.screenshot{border-radius:10px;overflow:hidden;margin:16px 0;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,0.05);}
+.screenshot.word-panel{max-width:360px;}
+.screenshot img{width:100%;display:block;}
+.screenshot.narrow{max-width:300px;margin:16px auto;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;}
+.tip-table{width:100%;border-collapse:separate;border-spacing:0;margin:20px 0;border:1px solid var(--border);border-radius:10px;overflow:hidden;font-size:14px;}
+.tip-table td{padding:14px 18px;color:var(--muted);line-height:1.65;border-bottom:1px solid var(--border);vertical-align:top;}
+.tip-table tr:last-child td{border-bottom:none;}
+.tip-table td:first-child{font-weight:600;color:var(--ink);white-space:nowrap;width:1%;padding-right:12px;}
+.tip-table tr:nth-child(odd){background:var(--surface);}
+.tip-table tr:nth-child(even){background:var(--bg);}
+.lang-table-wrap{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin:20px 0;}
+.lang-table-wrap table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:13px;}
+.lang-table-wrap thead tr{background:var(--surface);}
+.lang-table-wrap th{padding:10px 14px;text-align:left;font-size:11px;font-weight:500;color:var(--hint);text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--border);border-right:1px solid var(--border);}
+.lang-table-wrap th:last-child{border-right:none;}
+.lang-table-wrap td{padding:11px 14px;color:var(--muted);vertical-align:top;border-bottom:1px solid var(--border);border-right:1px solid var(--border);line-height:1.5;}
+.lang-table-wrap td:last-child{border-right:none;}
+.lang-table-wrap tr:last-child td{border-bottom:none;}
+.lang-table-wrap td.level{font-weight:500;color:var(--ink);white-space:nowrap;}
+.lang-table-wrap td.aim{white-space:nowrap;}
+.closing{margin:44px 40px 0;padding:32px;border:1px solid var(--border);border-radius:12px;background:var(--surface);text-align:center;}
+.closing h3{font-size:22px;font-weight:600;margin-bottom:12px;}
+.closing p{font-size:15px;color:var(--muted);line-height:1.65;max-width:420px;margin:0 auto 24px;}
+.cta-btn{display:inline-block;padding:12px 28px;background:var(--ink);color:#fff;font-size:14px;font-weight:500;border-radius:8px;text-decoration:none;transition:background .15s;}
+.cta-btn:hover{background:#27272a;}
+@media(max-width:600px){.hero{padding:36px 20px 32px;}.hero h1{font-size:24px;}.section{padding:28px 20px 0;}.toc{padding:20px 20px;}.closing{margin:28px 20px 0;padding:24px;}.tip-table td:first-child{white-space:normal;}}
+</style>
+</head>
+<body>
+<div class="guide">
+
+<div class="hero">
+  <div class="hero-badge" data-i18n="badge">Getting started guide</div>
+  <h1 data-i18n="hero_title">So you want to learn a language.<br>Good news: you already have the material.</h1>
+  <p data-i18n="hero_desc">Glottos turns any text into an interactive lesson — a news article, something you found on YouTube, a dialogue you generated five minutes ago. No textbook, no preset curriculum.</p>
+  <div class="lang-cloud">
+    <span class="lang-pill">Spanish</span><span class="lang-pill">French</span><span class="lang-pill">German</span><span class="lang-pill">Italian</span><span class="lang-pill">Japanese</span><span class="lang-pill">Korean</span><span class="lang-pill">Mandarin</span><span class="lang-pill">Portuguese</span><span class="lang-pill">Arabic</span><span class="lang-pill">Russian</span><span class="lang-pill more" data-i18n="lang_more">+ 24 more</span>
+  </div>
+</div>
+
+<div class="toc">
+  <div class="toc-label" data-i18n="toc_label">In this guide</div>
+  <ul class="toc-list">
+    <li><span class="toc-num">1</span> <span data-i18n="toc_1">How Glottos actually works</span></li>
+    <li><span class="toc-num">2</span> <span data-i18n="toc_2">Pasting your first text</span></li>
+    <li><span class="toc-num">3</span> <span data-i18n="toc_3">Reading with annotations</span></li>
+    <li><span class="toc-num">4</span> <span data-i18n="toc_4">Clicking words &amp; building vocab</span></li>
+    <li><span class="toc-num">5</span> <span data-i18n="toc_5">Flashcard review</span></li>
+    <li><span class="toc-num">6</span> <span data-i18n="toc_6">Choosing good texts</span></li>
+    <li><span class="toc-num">7</span> <span data-i18n="toc_7">Things worth knowing before you start</span></li>
+  </ul>
+</div>
+
+<div class="section" id="s1">
+  <div class="section-header"><span class="section-num">01</span><h2 class="section-title" data-i18n="s1_title">How Glottos actually works</h2></div>
+  <div class="section-body">
+    <p data-i18n="s1_intro">Most language apps have their own content, their own pace, their own idea of what you should be learning right now. Glottos doesn't do that. You pick the material — or generate something on the spot — and work through it in four stages.</p>
+    <div class="phase">
+      <div class="phase-header"><span class="phase-badge" data-i18n="phase1">Phase 1</span><span class="phase-title" data-i18n="phase1_title">Get your text</span></div>
+      <div class="phase-body">
+        <p data-i18n="phase1_p1">Paste anything in your target language, or use the built-in AI to generate a text from scratch. You set the level, the topic, and any specific angle — say, a B1 conversation about renting a flat that works in some conditional tense practice.</p>
+        <p data-i18n="phase1_p2">If you're not sure where to start, a few things that tend to work well:</p>
+        <div class="ideas">
+          <div class="idea-row"><div class="idea-dot"></div><span data-i18n="idea1"><strong>News, simplified.</strong> Take something from today's headlines and ask the AI to rewrite it at your level. You get real content without drowning in vocabulary.</span></div>
+          <div class="idea-row"><div class="idea-dot"></div><span data-i18n="idea2"><strong>YouTube transcripts.</strong> Find a video in your target language, grab the transcript, paste it in. Unscripted speech especially — it's full of the phrases textbooks skip.</span></div>
+          <div class="idea-row"><div class="idea-dot"></div><span data-i18n="idea3"><strong>Generated dialogues.</strong> Job interviews, awkward dinner conversations, arguments about whose turn it is to do the dishes — whatever situations you're likely to actually find yourself in.</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="phase-header"><span class="phase-badge b" data-i18n="phase2">Phase 2</span><span class="phase-title" data-i18n="phase2_title">Read carefully — and do a first pass through the flashcards</span></div>
+      <div class="phase-body">
+        <p data-i18n="phase2_p1">Not a skim. You're going for complete understanding — not just what the text says, but how it says it. Why this tense and not another. What makes that phrase sound natural instead of textbook-ish.</p>
+        <p data-i18n="phase2_p2">Click any word or phrase and you get a full breakdown: translation, grammar, all the forms the word can take, and voiced example sentences. Everything you look up goes automatically into a flashcard deck — in dictionary form, translation included.</p>
+        <div class="screenshot word-panel"><img src="/guide-images/word-panel.jpg" alt="Word explanation panel"></div>
+        <p data-i18n="phase2_p3">Once you've finished reading, flip through the deck a few times before moving on. The goal here isn't deep memorisation — it's stopping yourself from looking up the same word three times. Two or three passes is usually enough.</p>
+        <div class="callout" data-i18n="phase2_callout"><strong>Where you want to be by the end:</strong> every sentence understood, new words familiar enough that they won't trip you up when you hear them.</div>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="phase-header"><span class="phase-badge w" data-i18n="phase3">Phase 3</span><span class="phase-title" data-i18n="phase3_title">Audio training</span></div>
+      <div class="phase-body">
+        <p data-i18n="phase3_p1">Now you listen. Glottos plays the text sentence by sentence — you repeat each one out loud during the pause, then it plays again so you can check. You can loop individual sentences, replay single words or phrases, and adjust the pause length and number of repetitions right from the player.</p>
+        <div class="screenshot"><img src="/guide-images/audio-player.jpg" alt="Audio player panel"></div>
+        <p data-i18n="phase3_p2">A good starting point is 5-second pauses with 2–3 repetitions per sentence. If that's too fast, slow it down. The aim: you can hear the text without effort and reproduce it without stumbling. Because you understood every sentence in Phase 2, your brain at this point isn't translating — it's getting the patterns into muscle memory.</p>
+        <p data-i18n="phase3_p3">There's also a microphone button next to each sentence. Tap it, record yourself, play it back. Simple — but hearing your own pronunciation tends to clarify very quickly what still needs work.</p>
+        <div class="screenshot narrow"><img src="/guide-images/voice-recorder.jpg" alt="Voice recorder panel"></div>
+        <p data-i18n="phase3_p4">Finish by listening to the full text straight through, no pauses. If it flows easily, you're done. That feeling — when something effortful an hour ago now feels natural — is what progress actually feels like.</p>
+        <div class="callout" data-i18n="phase3_callout"><strong>Offline:</strong> The download button saves the audio with your pause and repetition settings as a file. Useful for the commute, or anywhere you don't want to be staring at a screen.</div>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="phase-header"><span class="phase-badge" data-i18n="phase4">Phase 4</span><span class="phase-title" data-i18n="phase4_title">Vocabulary review</span></div>
+      <div class="phase-body">
+        <p data-i18n="phase4_p1">Go back through your deck one more time with the full explanations showing. Good moment to trim it — remove anything that now feels obvious, add something you realise you want to keep.</p>
+        <p data-i18n="phase4_p2">You can browse the word list and play each word before reviewing, or go straight into flashcard mode. The card shows the word — click to flip and see the translation. Controls at the bottom let you set the wait time between cards, shuffle the deck, restart, or navigate manually.</p>
+        <div class="two-col">
+          <div class="screenshot"><img src="/guide-images/word-list.jpg" alt="Word list"></div>
+          <div class="screenshot"><img src="/guide-images/flashcard.jpg" alt="Flashcard"></div>
+        </div>
+        <p data-i18n="phase4_p3">Go in both directions — foreign word first, then swap it around. Recognising a word when you see it is one thing; producing it when you need it is another.</p>
+        <div class="callout" data-i18n="phase4_callout">Come back to the deck over the next few days. Words you're shaky on will keep appearing until they stick; the ones you know will quietly fade into the background.</div>
+      </div>
+    </div>
+    <p data-i18n="s1_closing">The whole thing — picking a text, reading it properly, drilling the audio, reviewing the vocab — is usually somewhere between 20 and 45 minutes. Once a week is enough to make real progress. Three times a week and you'll start surprising yourself.</p>
+  </div>
+</div>
+
+<div class="section" id="s2">
+  <div class="section-header"><span class="section-num">02</span><h2 class="section-title" data-i18n="s2_title">Pasting your first text</h2></div>
+  <div class="section-body">
+    <p data-i18n="s2_p1">Open Glottos, paste your text. The language defaults to whatever you've set in your preferences, but you can change it per workspace — useful if you're juggling more than one language at once, which, good for you.</p>
+    <div class="callout info" data-i18n="s2_callout1"><strong>First time?</strong> Keep it short. Three to five paragraphs is enough to see how everything fits together without spending the next two hours on one session.</div>
+    <p data-i18n="s2_p2">Hit go and Glottos opens the reading view. The wall of foreign text is now something you can actually interact with. Honestly, just getting to this point counts.</p>
+    <div class="callout warn" data-i18n="s2_callout2">If the text looks hard, that's fine. You're not supposed to understand it yet — that's the whole next step.</div>
+  </div>
+</div>
+
+<div class="section" id="s3">
+  <div class="section-header"><span class="section-num">03</span><h2 class="section-title" data-i18n="s3_title">Reading with annotations</h2></div>
+  <div class="section-body">
+    <p data-i18n="s3_p1">The reading view is where most of the actual work happens. Every word is clickable. You don't need to leave the app to look things up, copy-paste into another tab, or any of that.</p>
+    <div class="screenshot"><img src="/guide-images/reading-view.jpg" alt="Glottos reading view with text and word panel open"></div>
+    <p data-i18n="s3_p2">Click a word and you get the translation plus a full grammatical explanation — not just what it means but what it's doing in this sentence, what forms it can take, and a couple of voiced examples you can play right there. Select a phrase instead of a single word and you get the whole thing explained as a unit, which is particularly useful for expressions that don't translate word by word.</p>
+  </div>
+</div>
+
+<div class="section" id="s4">
+  <div class="section-header"><span class="section-num">04</span><h2 class="section-title" data-i18n="s4_title">Clicking words &amp; building vocab</h2></div>
+  <div class="section-body">
+    <p data-i18n="s4_p1">Your workspace collects everything you've looked up — words, phrases, the sentences they came from. It's a personal dictionary made entirely of things you encountered in real texts, which sounds obvious but makes a noticeable difference when you're reviewing later.</p>
+    <table class="tip-table">
+      <tr><td data-i18n="tip4_1a">Save freely</td><td data-i18n="tip4_1b">If you're not sure, save it. You can always remove things later. The cost of saving something you didn't need is zero.</td></tr>
+      <tr><td data-i18n="tip4_2a">Context matters</td><td data-i18n="tip4_2b">The saved sentence is the most important part. You'll remember where you learned a word long before you remember its definition.</td></tr>
+      <tr><td data-i18n="tip4_3a">Don't memorise yet</td><td data-i18n="tip4_3b">That's what the flashcards are for. Just read, click what you don't know, keep moving.</td></tr>
+      <tr><td data-i18n="tip4_4a">Breadth first</td><td data-i18n="tip4_4b">Meeting 100 words once in real sentences beats drilling 10 words in isolation until you can recite them backwards.</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="section" id="s5">
+  <div class="section-header"><span class="section-num">05</span><h2 class="section-title" data-i18n="s5_title">Flashcard review</h2></div>
+  <div class="section-body">
+    <p data-i18n="s5_p1">The flashcard tab is where "I've seen this somewhere" turns into actually knowing a word. Each card has the word, its grammatical form, and the sentence it came from. Rate how well you knew it — honest ratings work better than optimistic ones. Words you're shaky on come back sooner; the ones you know give you a break.</p>
+    <div class="callout" data-i18n="s5_callout">Ten minutes a day is genuinely enough. More than that is fine, but the gap between "doing some reviewing" and "doing no reviewing" matters a lot more than how long each session is.</div>
+  </div>
+</div>
+
+<div class="section" id="s6">
+  <div class="section-header"><span class="section-num">06</span><h2 class="section-title" data-i18n="s6_title">Choosing good texts</h2></div>
+  <div class="section-body">
+    <p data-i18n="s6_p1">Pick something you'd actually read in your own language. That said — before you think about topic or difficulty, think about length.</p>
+    <p data-i18n="s6_p2">Working through a text properly takes about <strong>2 to 3 minutes per sentence</strong>. Not because the app is slow, but because that's how long it takes to actually understand something, drill the audio, and not just skim past it. If you have 30 minutes, 10 sentences is plenty. An hour gives you maybe 20. Trying to do more means rushing the parts that matter.</p>
+    <p data-i18n="s6_p3">Difficulty-wise:</p>
+    <div class="lang-table-wrap">
+      <table>
+        <colgroup><col style="width:120px"><col><col style="width:140px"></colgroup>
+        <thead><tr><th data-i18n="th_level">Level</th><th data-i18n="th_sources">Good sources</th><th data-i18n="th_unknown">Unknown words</th></tr></thead>
+        <tbody>
+          <tr><td class="level" data-i18n="lvl_beg">Beginner</td><td data-i18n="lvl_beg_src">Children's news, simple blog posts, Wikipedia intros</td><td class="aim">~30%</td></tr>
+          <tr><td class="level" data-i18n="lvl_int">Intermediate</td><td data-i18n="lvl_int_src">News articles, short stories, subtitles from shows</td><td class="aim">~15–20%</td></tr>
+          <tr><td class="level" data-i18n="lvl_adv">Advanced</td><td data-i18n="lvl_adv_src">Essays, novels, opinion pieces, native forums</td><td class="aim">5–10%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout warn" data-i18n="s6_callout1">If you understand everything, the text is too easy. If you understand nothing, it's too hard — and also pretty demoralising. You want the middle: you can follow what's happening, but there's enough new material to actually work with.</div>
+    <div class="callout info" data-i18n="s6_callout2">When in doubt, use the AI generator and keep the sentence count low. Ten sentences done properly will do more than thirty done in a rush.</div>
+  </div>
+</div>
+
+<div class="section" id="s7">
+  <div class="section-header"><span class="section-num">07</span><h2 class="section-title" data-i18n="s7_title">Things worth knowing before you start</h2></div>
+  <div class="section-body">
+    <p data-i18n="s7_p1">A few things that tend to trip people up early on:</p>
+    <table class="tip-table">
+      <tr><td data-i18n="tip7_1a">Don't overthink</td><td data-i18n="tip7_1b">If a word appears once and feels irrelevant to your life, skip it. Save the ones that feel like they'll come back.</td></tr>
+      <tr><td data-i18n="tip7_2a">Re-read texts</td><td data-i18n="tip7_2b">Work through something, review for a few days, then read it again. The jump in comprehension is one of those things you have to experience to believe.</td></tr>
+      <tr><td data-i18n="tip7_3a">Use real content</td><td data-i18n="tip7_3b">A recipe, a Reddit thread in your target language, subtitles from a show — anything that doesn't feel like homework tends to stick better.</td></tr>
+      <tr><td data-i18n="tip7_4a">Do the audio</td><td data-i18n="tip7_4b">Reading and listening are genuinely different skills. A lot of people are surprised by how much harder the audio is, even on the same text.</td></tr>
+      <tr><td data-i18n="tip7_5a">Keep it small</td><td data-i18n="tip7_5b">One text a week is a real, sustainable habit. Don't design a routine that only works if everything goes perfectly.</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="closing">
+  <h3 data-i18n="closing_title">That's really all there is to it.</h3>
+  <p data-i18n="closing_desc">Find a text. Read it properly. Do the audio. Review the words. Come back next week. Languages get learned in small sessions over a long time, not in marathons.</p>
+  <a href="/app" class="cta-btn"><span data-i18n="cta">Go to workspace</span> &rarr;</a>
+</div>
+
+</div>
+<script>
+(function(){
+  try{
+    var p=JSON.parse(localStorage.getItem('userPrefs')||'{}');
+    var lang=p.interfaceLanguage||'en';
+    if(lang==='en')return;
+    fetch('/guide-i18n/'+lang+'.json').then(function(r){
+      if(!r.ok)return;
+      return r.json();
+    }).then(function(t){
+      if(!t)return;
+      document.querySelectorAll('[data-i18n]').forEach(function(el){
+        var key=el.getAttribute('data-i18n');
+        if(t[key])el.innerHTML=t[key];
+      });
+    }).catch(function(){});
+  }catch(e){}
+})();
+</script>
+</body>
+</html>

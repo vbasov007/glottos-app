@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:16
+    container_name: text-tutor-pg
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: textutor
+      POSTGRES_PASSWORD: textutor
+      POSTGRES_DB: textutor
+    ports:
+      - "127.0.0.1:54320:5432"
+    volumes:
+      - text-tutor-pg-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U textutor -d textutor"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  text-tutor-pg-data:

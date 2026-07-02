@@ -1,0 +1,74 @@
+# Tekst do Lekcji 17, wariant C: Zaimki y i en
+**Temat: Miejsca, kierunki, ilości**
+
+---
+
+## Tekst do słuchania
+
+1. Tu vas à l'aéroport ? Oui, j'y vais en taxi.
+2. Vous avez des billets ? Oui, nous en avons deux.
+3. Elle veut du thé ? Non, elle n'en veut pas.
+4. Nous allons à la montagne. Nous y allons chaque hiver.
+5. Tu prends une bouteille d'eau ? Oui, j'en prends une.
+6. Il y a une boulangerie près d'ici ? Oui, il y en a une au coin.
+7. Tu viens de la mairie ? Oui, j'en viens.
+8. Combien de cafés tu bois par jour ? J'en bois trois.
+9. Elle pense à ses vacances. Elle y pense souvent.
+10. Vous habitez en France ? Oui, nous y habitons depuis vingt ans.
+11. Tu manges du pain ? Oui, j'en mange beaucoup.
+12. Il a peur de l'avion. Il en a peur depuis toujours.
+13. Nous allons au supermarché. Nous y allons le samedi.
+14. Tu veux trop de sucre ! Non, j'en veux juste un peu.
+15. Il y a du monde ce soir ? Oui, il y en a beaucoup.
+16. Tu vas chez le dentiste ? Non, je n'y vais pas aujourd'hui.
+17. Elle achète des fleurs. Elle en achète tous les vendredis.
+18. Vous prenez de la confiture ? Oui, j'en prends, merci.
+19. Il travaille à l'hôpital. Il y travaille la nuit.
+20. Combien de temps tu restes à Paris ? J'y reste une semaine.
+21. Tu as besoin de ce livre ? Oui, j'en ai besoin pour demain.
+22. Il y en a plus ? Non, il n'y en a plus.
+23. Vous allez à la poste ? Oui, nous y allons ensemble.
+24. Elle prend un litre de lait. Elle en prend un chaque jour.
+25. Tu joues au foot ? Oui, j'y joue le mercredi.
+26. Nous parlons de ce projet. Nous en parlons depuis longtemps.
+27. Tu veux des fruits ? Oui, j'en veux deux ou trois.
+28. Il vient de l'école. Il en vient à seize heures.
+29. Allez-y, entrez ! On y va !
+30. J'en ai marre, je m'en vais !
+
+---
+
+## Lista słów i fraz
+
+| Francuski | Polski |
+|-----------|--------|
+| y | tam / o tym (zastępuje à + miejsce) |
+| en | trochę / tego (zastępuje de + rzeczownik) |
+| l'aéroport (m) | lotnisko |
+| la mairie | ratusz / urząd miasta |
+| l'hôpital (m) | szpital |
+| la boulangerie | piekarnia |
+| le supermarché | supermarket |
+| la poste | poczta |
+| chez le dentiste | do / u dentysty |
+| à la montagne | w górach |
+| en France | do / we Francji |
+| une bouteille | butelka |
+| un litre | litr |
+| beaucoup | dużo |
+| un peu | trochę |
+| trop | za dużo |
+| plus | więcej / już nie |
+| le thé | herbata |
+| le lait | mleko |
+| le pain | chleb |
+| le sucre | cukier |
+| les fleurs (f) | kwiaty |
+| avoir peur de | bać się |
+| avoir besoin de | potrzebować |
+| penser à | myśleć o |
+| parler de | mówić o |
+| il y en a | są / jest (tego) |
+| il n'y en a plus | już nie ma |
+| j'en ai marre | mam dość |
+| je m'en vais | wychodzę / idę sobie |

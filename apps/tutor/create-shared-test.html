@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>polyGlottos — Create Shared Lesson Test</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #f5f5f5; padding: 2rem; max-width: 900px; margin: 0 auto; }
+    h1 { font-size: 1.4rem; margin-bottom: 1.5rem; }
+    .section { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 1.25rem; margin-bottom: 1rem; }
+    .section h2 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; color: #333; }
+    label { display: block; font-size: 0.8rem; font-weight: 500; margin-bottom: 0.25rem; color: #555; }
+    input, textarea, select { width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 6px; font-size: 0.85rem; font-family: inherit; }
+    textarea { resize: vertical; min-height: 100px; }
+    .row { display: flex; gap: 0.75rem; margin-bottom: 0.75rem; }
+    .row > div { flex: 1; }
+    .btn { padding: 0.6rem 1.25rem; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 500; }
+    .btn-primary { background: #4f46e5; color: #fff; }
+    .btn-primary:hover { background: #4338ca; }
+    .btn-primary:disabled { background: #a5b4fc; cursor: not-allowed; }
+    .btn-success { background: #16a34a; color: #fff; }
+    .btn-success:hover { background: #15803d; }
+    .status { margin-top: 0.75rem; padding: 0.75rem; border-radius: 6px; font-size: 0.8rem; display: none; }
+    .status.error { display: block; background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+    .status.success { display: block; background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+    .status.info { display: block; background: #eff6ff; border: 1px solid #93c5fd; color: #1e40af; }
+    .result-box { margin-top: 0.75rem; padding: 0.75rem; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 6px; font-family: monospace; font-size: 0.8rem; white-space: pre-wrap; word-break: break-all; display: none; }
+    .progress-bar { height: 6px; background: #e5e7eb; border-radius: 3px; margin-top: 0.5rem; overflow: hidden; display: none; }
+    .progress-bar .fill { height: 100%; background: #4f46e5; border-radius: 3px; transition: width 0.3s; }
+    .embed-section { margin-top: 1rem; display: none; }
+    .frame-container { border: 2px solid #ccc; border-radius: 8px; overflow: hidden; background: #fff; margin-top: 0.75rem; }
+    iframe { display: block; width: 100%; height: 600px; border: none; }
+    .actions { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+    .code-display { font-family: monospace; font-size: 1.1rem; font-weight: 600; color: #4f46e5; }
+    .copy-btn { padding: 0.3rem 0.6rem; font-size: 0.75rem; background: #e5e7eb; border: none; border-radius: 4px; cursor: pointer; }
+    .copy-btn:hover { background: #d1d5db; }
+  </style>
+</head>
+<body>
+  <h1>polyGlottos — Create Shared Lesson</h1>
+
+  <!-- Config -->
+  <div class="section">
+    <h2>Configuration</h2>
+    <div class="row">
+      <div>
+        <label for="host">Host</label>
+        <input id="host" type="text" value="https://t.glottos.com">
+      </div>
+      <div>
+        <label for="apiKey">API Key</label>
+        <input id="apiKey" type="password" placeholder="Enter your API key">
+      </div>
+    </div>
+  </div>
+
+  <!-- Lesson Content -->
+  <div class="section">
+    <h2>Lesson Content</h2>
+    <div class="row">
+      <div>
+        <label for="name">Lesson Name</label>
+        <input id="name" type="text" value="Test Lesson" placeholder="My Lesson">
+      </div>
+      <div style="flex: 0 0 140px;">
+        <label for="textLang">Text Language</label>
+        <select id="textLang">
+          <option value="de" selected>German</option>
+          <option value="en">English</option>
+          <option value="fr">French</option>
+          <option value="es">Spanish</option>
+          <option value="it">Italian</option>
+          <option value="pt">Portuguese</option>
+          <option value="ru">Russian</option>
+          <option value="uk">Ukrainian</option>
+          <option value="pl">Polish</option>
+          <option value="nl">Dutch</option>
+          <option value="sv">Swedish</option>
+          <option value="no">Norwegian</option>
+          <option value="da">Danish</option>
+          <option value="cs">Czech</option>
+          <option value="he">Hebrew</option>
+          <option value="ar">Arabic</option>
+          <option value="zh">Chinese</option>
+          <option value="ja">Japanese</option>
+          <option value="ko">Korean</option>
+          <option value="tr">Turkish</option>
+        </select>
+      </div>
+      <div style="flex: 0 0 140px;">
+        <label for="explLang">Explanation Language</label>
+        <select id="explLang">
+          <option value="ru" selected>Russian</option>
+          <option value="en">English</option>
+          <option value="de">German</option>
+          <option value="fr">French</option>
+          <option value="es">Spanish</option>
+          <option value="he">Hebrew</option>
+          <option value="ar">Arabic</option>
+          <option value="zh">Chinese</option>
+          <option value="uk">Ukrainian</option>
+          <option value="pl">Polish</option>
+        </select>
+      </div>
+    </div>
+    <div style="margin-bottom: 0.75rem;">
+      <label for="text">Text (one sentence per line, no numbering or annotations)</label>
+      <textarea id="text">Der Hund läuft schnell durch den Park.
+Die Kinder spielen fröhlich auf der Wiese.
+Ein alter Mann sitzt auf der Bank und liest eine Zeitung.</textarea>
+    </div>
+    <div>
+      <label for="phrases">Phrases to explain (comma-separated)</label>
+      <input id="phrases" type="text" value="Hund, läuft, schnell, Park, Kinder, spielen, fröhlich, Wiese, sitzt, Bank, liest, Zeitung" placeholder="word1, word2, phrase three, ...">
+    </div>
+  </div>
+
+  <!-- Actions -->
+  <div class="section">
+    <h2>Create & Monitor</h2>
+    <div class="actions">
+      <button class="btn btn-primary" id="createBtn" onclick="createLesson()">Create Shared Lesson</button>
+      <span id="pollStatus" style="font-size: 0.8rem; color: #666;"></span>
+    </div>
+    <div class="progress-bar" id="progressBar"><div class="fill" id="progressFill"></div></div>
+    <div class="status" id="status"></div>
+    <div class="result-box" id="resultBox"></div>
+  </div>
+
+  <!-- Embed Preview -->
+  <div class="section embed-section" id="embedSection">
+    <h2>Preview</h2>
+    <div class="actions">
+      <span>Code: <span class="code-display" id="codeDisplay"></span></span>
+      <button class="copy-btn" onclick="copyCode()">Copy Code</button>
+      <button class="copy-btn" onclick="copyEmbedHtml()">Copy Embed HTML</button>
+      <button class="btn btn-success" onclick="openEmbed()">Open in New Tab</button>
+    </div>
+    <div class="frame-container">
+      <iframe id="embedFrame" src="about:blank"></iframe>
+    </div>
+  </div>
+
+  <script>
+    let currentCode = '';
+    let pollTimer = null;
+
+    function getHost() {
+      return document.getElementById('host').value.trim().replace(/\/+$/, '');
+    }
+
+    async function createLesson() {
+      const host = getHost();
+      const apiKey = document.getElementById('apiKey').value.trim();
+      const text = document.getElementById('text').value.trim();
+      const phrasesRaw = document.getElementById('phrases').value.trim();
+      const textLanguage = document.getElementById('textLang').value;
+      const explanationLanguage = document.getElementById('explLang').value;
+      const name = document.getElementById('name').value.trim();
+
+      if (!apiKey) return showStatus('error', 'API key is required');
+      if (!text) return showStatus('error', 'Text is required');
+      if (!phrasesRaw) return showStatus('error', 'At least one phrase is required');
+
+      const phrases = phrasesRaw.split(',').map(p => p.trim()).filter(Boolean);
+      if (phrases.length === 0) return showStatus('error', 'No valid phrases');
+
+      const btn = document.getElementById('createBtn');
+      btn.disabled = true;
+      btn.textContent = 'Creating...';
+      showStatus('info', 'Sending request...');
+
+      try {
+        const res = await fetch(host + '/api/create-shared', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-Key': apiKey,
+          },
+          body: JSON.stringify({ text, phrases, textLanguage, explanationLanguage, name }),
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+          showStatus('error', data.error || 'Request failed: ' + res.status);
+          btn.disabled = false;
+          btn.textContent = 'Create Shared Lesson';
+          return;
+        }
+
+        currentCode = data.code;
+        showResult(data);
+
+        if (data.status === 'processing') {
+          startPolling(data.code, data.total);
+        } else {
+          showEmbed(data.code);
+          btn.disabled = false;
+          btn.textContent = 'Create Shared Lesson';
+        }
+      } catch (err) {
+        showStatus('error', 'Network error: ' + err.message);
+        btn.disabled = false;
+        btn.textContent = 'Create Shared Lesson';
+      }
+    }
+
+    function startPolling(code, total) {
+      const bar = document.getElementById('progressBar');
+      const fill = document.getElementById('progressFill');
+      const pollStatus = document.getElementById('pollStatus');
+      bar.style.display = 'block';
+
+      if (pollTimer) clearInterval(pollTimer);
+      pollTimer = setInterval(async () => {
+        try {
+          const res = await fetch(getHost() + '/api/shared/' + encodeURIComponent(code));
+          const data = await res.json();
+
+          const done = data.progress?.done || 0;
+          const tot = data.progress?.total || total;
+          const pct = Math.round((done / Math.max(tot, 1)) * 100);
+          fill.style.width = pct + '%';
+          pollStatus.textContent = done + '/' + tot + ' phrases explained (' + pct + '%)';
+
+          if (!data.status || data.status === 'ready' || data.status === 'error') {
+            clearInterval(pollTimer);
+            pollTimer = null;
+            fill.style.width = '100%';
+            bar.style.display = 'none';
+            pollStatus.textContent = '';
+
+            if (data.status === 'error') {
+              showStatus('error', 'Processing failed');
+            } else {
+              showStatus('success', 'Lesson ready! Code: ' + code);
+            }
+
+            showEmbed(code);
+            const btn = document.getElementById('createBtn');
+            btn.disabled = false;
+            btn.textContent = 'Create Shared Lesson';
+          }
+        } catch (err) {
+          // keep polling on network errors
+        }
+      }, 3000);
+    }
+
+    function showEmbed(code) {
+      const section = document.getElementById('embedSection');
+      section.style.display = 'block';
+      document.getElementById('codeDisplay').textContent = code;
+      document.getElementById('embedFrame').src = getHost() + '/embed?import=' + encodeURIComponent(code);
+    }
+
+    function showStatus(type, msg) {
+      const el = document.getElementById('status');
+      el.className = 'status ' + type;
+      el.textContent = msg;
+    }
+
+    function showResult(data) {
+      const el = document.getElementById('resultBox');
+      el.style.display = 'block';
+      el.textContent = JSON.stringify(data, null, 2);
+    }
+
+    function copyCode() {
+      navigator.clipboard.writeText(currentCode);
+    }
+
+    function copyEmbedHtml() {
+      const html = '<iframe src="' + getHost() + '/embed?import=' + currentCode + '" width="100%" height="600" frameborder="0" style="border: none; border-radius: 8px;"></iframe>';
+      navigator.clipboard.writeText(html);
+    }
+
+    function openEmbed() {
+      window.open(getHost() + '/embed?import=' + encodeURIComponent(currentCode), '_blank');
+    }
+  </script>
+</body>
+</html>

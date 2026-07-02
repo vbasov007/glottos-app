@@ -1,0 +1,75 @@
+# Tekst do lekcji 13: En casa de los abuelos
+**Temat: Dzierżawcze w żywej rozmowie — rodzina, rzeczy, ciało**
+
+---
+
+## Tekst do słuchania
+
+1. Hola, abuela, este es mi novio Andrés.
+2. Encantada, Andrés. Mi nieta habla mucho de ti.
+3. El gusto es mío, señora. Su casa es preciosa.
+4. Gracias, hijo. Pasad, mi marido está en el salón.
+5. Abuelo, mira, han llegado Lucía y su novio.
+6. ¡Qué alegría! Dame un abrazo, nieta mía.
+7. Abuelo, ¿te duele otra vez la espalda?
+8. Sí, hija, mis hombros y mi cuello están fatal hoy.
+9. Pobre. Mi madre dice que tus dolores son por el frío.
+10. Tu madre tiene razón, como siempre.
+11. Andrés, ¿esa maleta tan grande es tuya?
+12. No, abuela, la mía es la negra. La grande es de Lucía.
+13. ¡Ay, nuestra nieta y sus mil vestidos!
+14. Mis vestidos no son mil, son solo ocho, abuela.
+15. Dejad vuestras cosas aquí, en el cuarto de vuestros primos.
+16. ¿Mis primos también vienen esta noche?
+17. Sí, tu tío Pablo, tu tía Carmen y sus tres hijos.
+18. Entonces seremos muchos en vuestra mesa.
+19. No te preocupes, nuestra mesa es enorme.
+20. Andrés, ¿quieres ver las fotos de nuestra familia?
+21. Claro, me encanta. ¿Quién es este señor de los ojos azules?
+22. Es mi padre, el bisabuelo de Lucía.
+23. Y esta niña con el pelo rizado, ¿es usted?
+24. Sí, soy yo. Mi pelo era oscuro entonces.
+25. Lucía tiene sus ojos, abuela, y la sonrisa del abuelo.
+26. Y su carácter también, por desgracia.
+27. ¡Oye! Mi carácter es fantástico.
+28. Niña, dame tu mano un momento.
+29. ¿Por qué, abuela? ¿Qué pasa?
+30. Nada, hija, solo quiero sentir tus dedos entre los míos.
+
+---
+
+## Lista słów i wyrażeń
+
+| Hiszpański | Polski |
+|------------|--------|
+| el novio, la novia | chłopak, dziewczyna (partner) |
+| la nieta, el nieto | wnuczka, wnuk |
+| el marido | mąż |
+| el abrazo | uścisk |
+| la espalda | plecy |
+| el hombro | bark |
+| el cuello | szyja |
+| el dolor | ból |
+| tener razón | mieć rację |
+| la maleta | walizka |
+| el vestido | sukienka |
+| el cuarto | pokój |
+| el primo, la prima | kuzyn, kuzynka |
+| el tío, la tía | wujek, ciocia |
+| la mesa | stół |
+| la foto | zdjęcie |
+| el bisabuelo, la bisabuela | pradziadek, prababcia |
+| los ojos | oczy |
+| el pelo | włosy |
+| rizado | kręcony |
+| oscuro | ciemny |
+| la sonrisa | uśmiech |
+| el carácter | charakter |
+| la mano | dłoń |
+| el dedo | palec |
+| el mío, la mía | mój, moja (forma długa) |
+| el tuyo, la tuya | twój, twoja (forma długa) |
+| nuestro, nuestra | nasz, nasza |
+| vuestro, vuestra | wasz, wasza |
+| por desgracia | niestety |
+| no te preocupes | nie martw się |

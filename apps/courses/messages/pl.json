@@ -1,0 +1,301 @@
+{
+  "common": {
+    "appName": "Glottos Matrix",
+    "loading": "Ładowanie…",
+    "comingSoon": "Wkrótce",
+    "close": "Zamknij",
+    "cancel": "Anuluj",
+    "save": "Zapisz",
+    "targetIn": {
+      "de": "po niemiecku",
+      "fr": "po francusku",
+      "es": "po hiszpańsku",
+      "sr": "po serbsku",
+      "ka": "po gruzińsku",
+      "he": "po hebrajsku",
+      "en": "po angielsku",
+      "it": "po włosku"
+    }
+  },
+  "nav": {
+    "course": "Kursy",
+    "dictionary": "Słownik",
+    "progress": "Postęp",
+    "settings": "Ustawienia",
+    "dictionaryShort": "Słownik",
+    "tutor": "Audio-tutor",
+    "signOut": "Wyloguj"
+  },
+  "landing": {
+    "headline": "Glottos Matrix",
+    "subtitlePrefix": "Niemiecki dla",
+    "subtitleSuffix": "— kurs strukturalny",
+    "startCta": "Otwórz kurs",
+    "startSubtitle": "50 lekcji · 50 testów · 150 tekstów do słuchania",
+    "referenceCta": "Słownik",
+    "referenceSubtitle": "2 300+ niemieckich słów",
+    "notYourLanguage": "Nie twój język? Przełącz:",
+    "motto": "5% — zrozumieć regułę. 95% — wytrenować aparat mowy.",
+    "mottoLine2": "Język to sport. Otwórz usta i mów."
+  },
+  "courseSelection": {
+    "heading": "Wybierz kurs",
+    "none": "Brak kursów dla tej pary językowej.",
+    "lessonsLabel": "lekcji",
+    "testsLabel": "testów",
+    "textsLabel": "tekstów",
+    "entriesLabel": "haseł w słowniku"
+  },
+  "courseNames": {
+    "classic50": "Klasyczny 50",
+    "losreden50": "Loslegen 50 — ścieżka płynności"
+  },
+  "courseHome": {
+    "lessonLabel": "Lekcja",
+    "rankLabel": "Stopień",
+    "testAfter": "▶ Test po lekcji",
+    "comingSoon": "wkrótce",
+    "previewBanner": "Kurs w trakcie tworzenia: dostępna tylko Lekcja 1, pozostałe w przygotowaniu.",
+    "introTitle": "Wprowadzenie",
+    "introSubtitle": "Jak działa kurs — przeczytaj przed Lekcją 1.",
+    "introOpen": "Otwórz"
+  },
+  "courseIntro": {
+    "backToCourse": "Powrót do kursu"
+  },
+  "courseUnavailable": {
+    "title": "{course} — wkrótce",
+    "message": "Ten kurs nie jest jeszcze dostępny w twoim języku ojczystym ({native}). Pracujemy nad tym.",
+    "availableIn": "Dostępne w",
+    "otherCourses": "Inne kursy dla tego języka docelowego"
+  },
+  "lesson": {
+    "backToCourse": "← Do kursu",
+    "prev": "Poprzednia lekcja",
+    "next": "Następna lekcja",
+    "tabs": {
+      "theory": "Teoria",
+      "vocabulary": "Naucz się słów",
+      "writing": "Ćwiczenia",
+      "moreExercises": "Dodatkowe ćwiczenia",
+      "audio": "Praktyka audio",
+      "cheatsheet": "Ściąga"
+    },
+    "nextStep": "Dalej",
+    "nextLesson": "Następna lekcja",
+    "locked": "Zaloguj się",
+    "tabDone": "✓",
+    "markComplete": "Oznacz lekcję jako ukończoną",
+    "completed": "✓ Lekcja ukończona",
+    "uncomplete": "Cofnij",
+    "showKey": "Pokaż klucz",
+    "hideKey": "Ukryj klucz",
+    "checkAnswer": "Sprawdź",
+    "showAnswer": "Pokaż odpowiedź",
+    "checking": "…",
+    "verdict": {
+      "correct": "Poprawnie",
+      "correctAlternate": "Poprawnie (zaakceptowano alternatywę)",
+      "wrong": "Nie do końca",
+      "aiJudged": "Sprawdzone przez AI",
+      "warningCase": "Zaliczone, ale sprawdź wielkość liter.",
+      "warningPunctuation": "Zaliczone, ale sprawdź interpunkcję (przecinki, kropki).",
+      "warningCaseAndPunctuation": "Zaliczone, ale sprawdź wielkość liter i interpunkcję.",
+      "reference": "Wzorzec:",
+      "couldNotCheck": "Nie udało się sprawdzić — spróbuj ponownie."
+    },
+    "issueCategories": {
+      "spelling": "Pisownia",
+      "wrongWord": "Złe słowo",
+      "wordOrder": "Kolejność słów",
+      "wordForm": "Forma / przypadek",
+      "missingWord": "Brakujące słowo",
+      "syntax": "Składnia"
+    },
+    "hint": {
+      "expectedShort": "Oczekiwano:",
+      "expectedLong": "Oczekiwano czegoś w stylu:",
+      "or": "lub"
+    },
+    "input": {
+      "placeholder": {
+        "de": "Wpisz po niemiecku…",
+        "fr": "Wpisz po francusku…",
+        "es": "Wpisz po hiszpańsku…",
+        "sr": "Wpisz po serbsku…",
+        "ka": "Wpisz po gruzińsku…",
+        "he": "Wpisz po hebrajsku…",
+        "en": "Wpisz po angielsku…",
+        "it": "Wpisz po włosku…"
+      }
+    },
+    "signInRequired": "Zaloguj się, by odblokować tę część lekcji. Bezpłatnie, postęp synchronizuje się między urządzeniami."
+  },
+  "vocab": {
+    "title": "Słownictwo lekcji",
+    "entriesShort": "słów",
+    "german": "Niemiecki",
+    "gender": "Rodzaj",
+    "native": "Tłumaczenie",
+    "openInGlottos": "🔊 Naucz się słów",
+    "openInGlottosTooltip": "Otwiera słownik lekcji w aplikacji zewnętrznej — fiszki z audio, wyszukiwanie i notatki.",
+    "courseDictionaryHeading": "Pełny słownik"
+  },
+  "writing": {
+    "intro": "Przeczytaj zadanie, wpisz odpowiedź {target} i naciśnij «Sprawdź». Najpierw sprawdzamy lokalnie; w trudnych przypadkach pytamy Claude o podpowiedź. Postęp zapisuje się automatycznie.",
+    "noExercises": "W tej lekcji nie ma ćwiczeń pisemnych.",
+    "openEndedNote": "Otwarte ćwiczenie — bez automatycznego sprawdzania. Wypowiedz odpowiedzi na głos i idź dalej.",
+    "openInGlottos": "🔊 Ćwiczenia",
+    "openInGlottosTooltip": "Otwiera odpowiedzi ćwiczeń w aplikacji zewnętrznej — z audio i analizą słowo po słowie."
+  },
+  "moreExercises": {
+    "intro": "Potrzebujesz więcej praktyki? Claude wygeneruje świeże ćwiczenie z 10 zadaniami ze słownictwa i tematu lekcji.",
+    "generateCta": "Wygeneruj ćwiczenie",
+    "generateMore": "Wygeneruj kolejne",
+    "generateWritingCta": "Ćwiczenie z budowy fraz",
+    "generateListeningCta": "Wygeneruj ćwiczenie na słuch",
+    "generating": "Generuję…",
+    "error": "Generowanie się nie udało. Spróbuj jeszcze raz.",
+    "capReached": "Osiągnięto limit na lekcję",
+    "counter": "Wygenerowane: {n} z {max}",
+    "delete": "Usuń ćwiczenie",
+    "confirmDelete": "Usunąć to wygenerowane ćwiczenie i wszystkie odpowiedzi do niego?",
+    "listeningPrompt": "Posłuchaj i zapisz",
+    "difficulty": "trudność {level}/10"
+  },
+  "similarPrompt": {
+    "cta": "Jeszcze jedno podobne",
+    "generating": "Generuję…",
+    "error": "Nie udało się wygenerować. Spróbuj ponownie."
+  },
+  "openEndedSample": {
+    "reveal": "Wzorcowa odpowiedź",
+    "loading": "Przygotowuję…",
+    "heading": "Posłuchaj i sprawdź się",
+    "hide": "Ukryj wzór",
+    "empty": "Brak wzoru dla tego ćwiczenia.",
+    "error": "Nie udało się wygenerować wzoru. Spróbuj ponownie."
+  },
+  "audio": {
+    "listeningHeading": "Teksty do słuchania",
+    "listeningSubtitle": "Trzy warianty tekstów na lekcję. Otwórz w glottos.com dla synchronizowanego audio.",
+    "openInGlottos": "🔊 Praktyka audio",
+    "openInGlottosTooltip": "Otwiera ten tekst w aplikacji zewnętrznej — słuchaj ze synchronizacją i tłumaczeniem po dotknięciu.",
+    "preparing": "Audio w przygotowaniu…",
+    "textLabel": "Tekst",
+    "glottosNote": "Audio odtwarzane jest w glottos.com — otwiera się w nowej karcie.",
+    "mouthHeading": "Trening ust",
+    "mouthSubtitle": "Główna zasada: 95% — to trening ust. Czytaj każdą linijkę na głos. Nie tylko patrz — mów.",
+    "emptyState": "W tej lekcji nie ma jeszcze gam ani matryc — pojawiają się od lekcji 3. Do ćwiczeń mowy użyj tekstów powyżej."
+  },
+  "test": {
+    "title": "Test",
+    "backToLesson": "← Lekcja",
+    "promptsLabel": "zadań · 80% — próg zaliczenia",
+    "answered": "odpowiedziano",
+    "correctSoFar": "poprawnie na razie",
+    "finish": "Zakończ test",
+    "tryAgain": "Spróbuj ponownie",
+    "complete": "Test ukończony",
+    "passed": "Zaliczone",
+    "tryAgainToPass": "Spróbuj ponownie — potrzeba 80%",
+    "claimRank": "Odbierz stopień:",
+    "review": "Przegląd",
+    "wrongLabel": "✗ Niepoprawnie",
+    "promptLabel": "Zadanie:",
+    "youTypedLabel": "Wpisano:",
+    "expectedLabel": "Oczekiwano:",
+    "noWrongAnswers": "Brak błędów do przeglądu.",
+    "pageOf": "Strona",
+    "pagePrev": "← Poprzednie 10",
+    "pageNext": "Następne 10 →"
+  },
+  "dashboard": {
+    "title": "Twój postęp",
+    "subtitle": "Zaloguj się, aby postęp był zapisywany na koncie i dostępny na każdym urządzeniu. Bez logowania zostaje tylko w tej przeglądarce.",
+    "stats": {
+      "lessons": "Lekcji",
+      "testsPassed": "Testów zaliczonych",
+      "dayStreak": "Dni z rzędu",
+      "wordsSeen": "Słów poznanych",
+      "of": "z",
+      "inProgress": "w toku",
+      "attempted": "prób",
+      "keepGoing": "Tak trzymać"
+    },
+    "ranks": "Stopnie",
+    "rankUnlock": "Otwiera się po teście",
+    "goToCourse": "Do kursu →"
+  },
+  "settings": {
+    "title": "Ustawienia",
+    "nativeLangHeading": "Język ojczysty",
+    "nativeLangSubtitle": "Język, którym mówisz — wybiera treść kursu i interfejs.",
+    "targetLangHeading": "Język docelowy",
+    "targetLangSubtitle": "Czego się uczysz. Karty pokazują wszystkie języki i ich gotowość.",
+    "soon": "Wkrótce",
+    "notAvailableForTarget": "Niedostępne dla tego języka docelowego",
+    "progressHeading": "Postęp",
+    "progressSubtitle": "Zaloguj się, aby postęp zapisywał się na koncie i był dostępny na każdym urządzeniu. Reset jest nieodwracalny.",
+    "exportJson": "Eksport postępu (JSON)",
+    "reset": "Zresetuj postęp",
+    "resetConfirm": "Potwierdź — usuń cały postęp",
+    "themeHeading": "Wygląd",
+    "themeSubtitle": "Wybierz schemat kolorów. „Systemowy\" podąża za urządzeniem.",
+    "themeLight": "Jasny",
+    "themeDark": "Ciemny",
+    "themeSystem": "Systemowy"
+  },
+  "dictionary": {
+    "title": "Słownik kursu niemieckiego",
+    "entriesLabel": "haseł",
+    "searchPlaceholder": "Szukaj słowa {target} lub po polsku… (naciśnij / dla fokusu)",
+    "matches": "dopasowań dla",
+    "noMatches": "dopasowań dla",
+    "pickLetterOrSearch": "Wybierz literę lub zacznij wpisywać słowo, by je wyszukać.",
+    "details": {
+      "show": "Pokaż formy i przykład",
+      "hide": "Ukryj formy i przykład",
+      "button": "Szczegóły",
+      "meaning": "Znaczenie",
+      "forms": "Formy",
+      "example": "Przykład",
+      "loading": "Ładowanie…",
+      "error": "Nie udało się załadować. Spróbuj ponownie.",
+      "tryAi": "Zapytaj AI",
+      "notFound": "„{word}\" nie wygląda na prawdziwe słowo.",
+      "genderLabel": "Rodzaj gramatyczny",
+      "moreExamples": "Więcej przykładów",
+      "generating": "Generuję…",
+      "practice": "Poćwicz to słowo",
+      "practicePrompt": "Przetłumacz:",
+      "practiceHint": "Wskazówka:",
+      "practiceHintReveal": "Kliknij, aby zobaczyć",
+      "practiceCheck": "Sprawdź",
+      "practiceShowAnswer": "Pokaż odpowiedź",
+      "practiceGenericError": "Nie udało się wygenerować. Spróbuj ponownie.",
+      "practiceCorrect": "Dobrze",
+      "practiceWrong": "Prawie",
+      "practiceTryAnother": "Inne ćwiczenie"
+    }
+  },
+  "cefr": {
+    "vocabulary": "Słownictwo",
+    "grammar": "Gramatyka",
+    "currentLevel": "poziom {level}",
+    "completedNone": "Pasek zacznie rosnąć, gdy oznaczysz pierwszą lekcję jako ukończoną.",
+    "lessonContributionIntro": "Ukończenie tej lekcji doda do ogólnego postępu:"
+  },
+  "errors": {
+    "notFound": "Nie znaleziono"
+  },
+  "targetLanding": {
+    "subtitlePrefix": "Kurs strukturalny",
+    "lessonsLine": "50 lekcji · 50 testów · 150 tekstów do słuchania",
+    "pickNativeHeading": "Wybierz język wyjaśnień",
+    "openCourseCta": "Otwórz kurs",
+    "signInPrompt": "Zaloguj się, by postęp był zapisywany i synchronizowany między urządzeniami. Kurs działa też bez logowania — postęp zostaje w tej przeglądarce.",
+    "previewBanner": "Kurs w przygotowaniu. Dostępne {available} z 50 lekcji.",
+    "notAvailableHere": "Niedostępne w tym języku."
+  }
+}

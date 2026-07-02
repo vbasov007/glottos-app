@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(npm test:*)",
+      "Bash(npm install:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npm ls:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx vitest:*)",
+      "Bash(npx playwright:*)",
+      "Bash(npx vite:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git add:*)",
+      "Bash(git checkout:*)",
+      "Bash(git revert:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git fetch:*)",
+      "Bash(git branch:*)",
+      "Bash(git stash:*)",
+      "Bash(git restore:*)",
+      "Bash(node:*)",
+      "Bash(tsx:*)",
+      "Bash(doctl apps:*)",
+      "Bash(wc:*)",
+      "Bash(ps aux:*)",
+      "Bash(curl -s -o /dev/null -w *)",
+      "WebSearch",
+      "WebFetch(domain:developer.signalwire.com)",
+      "WebFetch(domain:docs.cloud.google.com)",
+      "WebFetch(domain:learn.microsoft.com)",
+      "WebFetch(domain:cloud.google.com)"
+    ]
+  }
+}

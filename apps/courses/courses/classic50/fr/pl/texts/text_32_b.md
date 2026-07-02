@@ -1,0 +1,69 @@
+# Tekst do Lekcji 32: Subjonctif po woli, konieczności i emocjach (B)
+**Temat: życie rodzinne, szkoła, codzienne obowiązki**
+
+---
+
+## Tekst do słuchania i powtórki
+
+1. Mes parents veulent que je rentre avant minuit.
+2. Il faut que les enfants se couchent tôt.
+3. Le professeur souhaite que tous les élèves réussissent.
+4. Je suis content que ma sœur ait trouvé un travail.
+5. Il est important que tu fasses du sport régulièrement.
+6. J'ai peur que mon fils ne soit pas prêt pour l'examen.
+7. Ma femme préfère que nous restions à la maison ce week-end.
+8. Il vaut mieux que tu prennes un parapluie.
+9. Je regrette que tu ne puisses pas rester plus longtemps.
+10. Il faut que nous achetions du pain et du lait.
+11. Nous sommes heureux que vous soyez de retour.
+12. Il est nécessaire que chacun fasse sa part.
+13. Mon père exige que je sois honnête avec lui.
+14. Je suis surpris qu'elle veuille déménager.
+15. Il faut que tu boives moins de café.
+16. Ma mère souhaite que je lui écrive plus souvent.
+17. Je suis désolé que vous ayez attendu si longtemps.
+18. Il est temps que tu apprennes à conduire.
+19. Nous voulons que nos enfants soient polis avec tout le monde.
+20. C'est dommage que ton frère ne vienne pas avec nous.
+21. Il faut que je dise quelque chose au directeur.
+22. Je préfère que les invités arrivent avant huit heures.
+23. Il est étonnant que ce petit garçon sache déjà lire.
+24. Je suis triste que mes grands-parents vivent si loin.
+25. Le médecin veut que je revienne la semaine prochaine.
+26. Il faut que vous remplissiez ce formulaire en français.
+27. J'ai peur que la voiture ne tombe en panne sur l'autoroute.
+28. Je suis fier que mon fils ait réussi son examen.
+29. Il vaut mieux que nous prenions le train que la voiture.
+30. Nous sommes ravis que tu puisses passer Noël avec nous.
+
+---
+
+## Lista słów
+
+| Francuski | Polski |
+|-----------|--------|
+| rentrer | wracać do domu |
+| se coucher | iść spać, kłaść się |
+| réussir | osiągać sukces, zdać |
+| trouver | znaleźć |
+| régulièrement | regularnie |
+| être prêt | być gotowym |
+| rester | zostać, pozostać |
+| il vaut mieux que | lepiej, żeby |
+| un parapluie | parasol |
+| acheter | kupować |
+| de retour | z powrotem |
+| chacun | każdy (z osobna) |
+| honnête | uczciwy |
+| déménager | przeprowadzać się |
+| conduire | prowadzić (samochód) |
+| poli | grzeczny, uprzejmy |
+| c'est dommage que | szkoda, że |
+| le directeur | dyrektor |
+| un invité | gość |
+| être étonnant | być zdumiewającym |
+| le formulaire | formularz |
+| tomber en panne | zepsuć się, mieć awarię |
+| être fier que | być dumnym, że |
+| l'autoroute | autostrada |
+| passer Noël | spędzić Boże Narodzenie |

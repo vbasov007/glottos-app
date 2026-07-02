@@ -1,0 +1,75 @@
+# Tekst C do lekcji 47: Żywy dialog — markery mowy potocznej
+**Temat: Dyskurs w rozmowie — well, you know, I mean, actually, anyway, basically**
+
+---
+
+## Tekst do słuchania i powtarzania
+
+1. So, how was your weekend?
+2. Well, it was mixed, to be honest.
+3. Mixed? What do you mean by that?
+4. I mean, some parts were great, but some parts were stressful.
+5. You know, my parents came to visit on Saturday.
+6. Actually, that was the stressful part.
+7. Oh, really? Why was that?
+8. Well, they wanted to talk about my job again.
+9. They keep saying I should look for a more stable career.
+10. In other words, the same lecture as every visit.
+11. But on the other hand, it's nice to see them, of course.
+12. Yeah, I get it. By the way, did you have time to read the book I gave you?
+13. Actually, yes, I finished it on Sunday morning.
+14. Oh, what did you think of it?
+15. Honestly, it was much better than I expected.
+16. The story is slow at the beginning. However, it really picks up later.
+17. The ending in particular was very moving.
+18. To be fair, the writing style takes some getting used to.
+19. But basically, I would recommend it to anyone.
+20. By the way, do you know if there's a sequel?
+21. Actually, I'm not sure, but I think there might be.
+22. Anyway, what are you doing next weekend?
+23. Well, that's the funny thing. My parents are coming back.
+24. You're kidding! Already?
+25. Yeah, they want to help with the apartment, you know, organising stuff.
+26. To be honest, I would rather do it myself.
+27. Still, I can't really say no.
+28. I mean, they mean well, after all.
+29. Speaking of which, do you need any help yourself?
+30. Actually, that would be amazing. Thanks for offering.
+
+---
+
+## Lista słów i fraz
+
+| English | Polski |
+|---------|--------|
+| to be honest | szczerze mówiąc |
+| stressful | stresujący |
+| stable career | stabilna kariera |
+| lecture | pouczanie, wykład |
+| sequel | kontynuacja, sequel |
+| moving | wzruszający |
+| writing style | styl pisania |
+| to pick up | nabrać tempa, ożywić się |
+| to get used to | przyzwyczaić się |
+| to recommend | polecać |
+| to organise | organizować |
+| to mean well | mieć dobre intencje |
+| after all | w końcu |
+| amazing | niesamowity |
+| to offer | proponować |
+| well | no cóż |
+| you know | wiesz |
+| I mean | mam na myśli |
+| actually | właściwie |
+| in other words | innymi słowy |
+| but on the other hand | ale z drugiej strony |
+| of course | oczywiście |
+| by the way | przy okazji |
+| honestly | szczerze |
+| however | jednak |
+| in particular | w szczególności |
+| to be fair | gwoli sprawiedliwości |
+| basically | zasadniczo |
+| anyway | tak czy inaczej |
+| still | mimo wszystko |
+| speaking of which | a propos |

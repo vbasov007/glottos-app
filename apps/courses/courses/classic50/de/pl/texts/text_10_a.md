@@ -1,0 +1,69 @@
+# Tekst do lekcji 10: Wprowadzenie do Dativ
+**Temat: Orientacja w mieście**
+
+---
+
+## Tekst do słuchania i powtarzania
+
+1. Wo ist hier der Bahnhof?
+2. Gehen Sie geradeaus bis zur Kreuzung.
+3. Ich helfe meinem Nachbarn.
+4. Wie komme ich zur Bibliothek?
+5. Die Post ist gegenüber dem Kaufhaus.
+6. Er zeigt dem Touristen den Weg.
+7. Gehen Sie die zweite Straße links.
+8. Die Haltestelle ist an der Ecke.
+9. Ich danke meiner Lehrerin.
+10. Ist das Krankenhaus weit von hier?
+11. Nein, etwa fünf Minuten zu Fuß.
+12. Gehen Sie über die Brücke und dann rechts.
+13. Das Rathaus gefällt meinem Vater.
+14. Können Sie mir den Weg zeigen?
+15. Die Ampel ist an der Kreuzung.
+16. Ich gebe dem Kellner ein Trinkgeld.
+17. Wo ist die nächste Haltestelle?
+18. Er schenkt seiner Frau Blumen.
+19. Der Parkplatz ist in der Nähe.
+20. Wir gratulieren unserem Opa.
+21. Gehen Sie geradeaus und dann links.
+22. Die Bibliothek ist neben dem Rathaus.
+23. Glaubst du mir?
+24. Der Marktplatz ist nicht weit von hier.
+25. Sie antwortet dem Chef.
+26. Ich zeige dir den Weg zum Bahnhof.
+27. Das Fahrrad gehört dem Mädchen.
+28. Gehen Sie bis zur Ampel und dann rechts.
+29. Die Stadt gefällt mir sehr.
+30. Hilfst du deiner Mutter?
+
+---
+
+## Lista słów i fraz
+
+| Niemiecki | Polski |
+|----------|---------|
+| der Bahnhof (m) | dworzec |
+| der Marktplatz (m) | rynek, plac targowy |
+| der Parkplatz (m) | parking |
+| das Rathaus (n) | ratusz |
+| das Krankenhaus (n) | szpital |
+| das Kaufhaus (n) | dom towarowy |
+| die Bibliothek (f) | biblioteka |
+| die Haltestelle (f) | przystanek |
+| die Brücke (f) | most |
+| die Kreuzung (f) | skrzyżowanie |
+| die Ampel (f) | sygnalizacja świetlna |
+| die Post (f) | poczta |
+| geradeaus | prosto |
+| links | w lewo |
+| rechts | w prawo |
+| gegenüber | naprzeciwko |
+| in der Nähe | w pobliżu |
+| zu Fuß | pieszo |
+| helfen (+ Dativ) | pomagać |
+| zeigen (+ Dativ) | pokazywać |
+| danken (+ Dativ) | dziękować |
+| gefallen (+ Dativ) | podobać się |
+| gehören (+ Dativ) | należeć |
+| dem (Dativ, m/n) | rodzajnik m./n. w celowniku |
+| der (Dativ, f) | rodzajnik ż. w celowniku |

@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+/* ── Theme tokens ─────────────────────────────────── */
+
+:root {
+  color-scheme: light;
+
+  /* backgrounds */
+  --bg-page: #F8F9FA;
+  --bg-panel: #ffffff;
+  --bg-surface: #fafafa;
+  --bg-surface-half: rgba(250, 250, 249, 0.5);
+  --bg-hover: #f4f4f5;
+  --bg-input: #ffffff;
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+  --bg-overlay-light: rgba(255, 255, 255, 0.7);
+  --bg-overlay-blur: rgba(255, 255, 255, 0.95);
+  --bg-accent: #000000;
+  --bg-accent-hover: #27272a;
+  --bg-muted: #e4e4e7;
+
+  /* borders */
+  --border-main: #e4e4e7;
+  --border-light: #f4f4f5;
+  --border-accent: #000000;
+
+  /* text */
+  --text-primary: #18181b;
+  --text-secondary: #3f3f46;
+  --text-tertiary: #52525b;
+  --text-muted: #71717a;
+  --text-faint: #a1a1aa;
+  --text-on-accent: #ffffff;
+  --text-heading: #18181b;
+
+  /* shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+
+  /* specific */
+  --bg-playbar: #18181b;
+  --text-playbar: #ffffff;
+  --ring-color: #a1a1aa;
+
+  /* anonymous banner */
+  --bg-anon-banner: rgba(217, 119, 6, 0.08);
+  --border-anon-banner: rgba(217, 119, 6, 0.15);
+  --text-anon-banner: #92400e;
+}
+
+.dark {
+  color-scheme: dark;
+
+  /* backgrounds */
+  --bg-page: #09090b;
+  --bg-panel: #18181b;
+  --bg-surface: #27272a;
+  --bg-surface-half: rgba(39, 39, 42, 0.5);
+  --bg-hover: #3f3f46;
+  --bg-input: #27272a;
+  --bg-overlay: rgba(0, 0, 0, 0.6);
+  --bg-overlay-light: rgba(0, 0, 0, 0.5);
+  --bg-overlay-blur: rgba(24, 24, 27, 0.95);
+  --bg-accent: #e4e4e7;
+  --bg-accent-hover: #d4d4d8;
+  --bg-muted: #3f3f46;
+
+  /* borders */
+  --border-main: #52525b;
+  --border-light: #3f3f46;
+  --border-accent: #a1a1aa;
+
+  /* text */
+  --text-primary: #fafafa;
+  --text-secondary: #d4d4d8;
+  --text-tertiary: #a1a1aa;
+  --text-muted: #71717a;
+  --text-faint: #52525b;
+  --text-on-accent: #18181b;
+  --text-heading: #fafafa;
+
+  /* shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.6);
+
+  /* specific */
+  --bg-playbar: #27272a;
+  --text-playbar: #fafafa;
+  --ring-color: #71717a;
+
+  /* anonymous banner */
+  --bg-anon-banner: rgba(217, 119, 6, 0.1);
+  --border-anon-banner: rgba(217, 119, 6, 0.2);
+  --text-anon-banner: #fcd34d;
+}
+
+/* ── react-image-crop theme overrides ─────────────────
+   Tint handles and outline to match the app's accent palette; tune the dim
+   layer so the modal's surface shows through better than the library default. */
+.ReactCrop__crop-selection {
+  border-color: var(--border-accent);
+}
+.ReactCrop__drag-handle::after {
+  background-color: var(--bg-accent);
+  border-color: var(--bg-panel);
+}
+.ReactCrop--no-animate .ReactCrop__crop-selection,
+.ReactCrop__crop-selection {
+  box-shadow: 0 0 0 9999em rgba(0, 0, 0, 0.45);
+}

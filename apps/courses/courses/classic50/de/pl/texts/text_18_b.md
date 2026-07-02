@@ -1,0 +1,64 @@
+# Tekst do lekcji 18 (B): Akkusativ i Dativ — podsumowanie
+**Temat: Przyimki i codzienne życie w mieście**
+
+---
+
+## Tekst do słuchania i powtarzania
+
+1. Sie geht mit ihrer Freundin durch die Stadt.
+2. Dieses Geschenk ist für meine Nachbarin.
+3. Er kommt aus dem Büro und fährt nach Hause.
+4. Ich fahre ohne meinen Regenschirm zur Arbeit.
+5. Nach dem Kurs gehen wir in ein Café.
+6. Wir laufen um den Marktplatz und sehen die Geschäfte.
+7. Seit wann wohnst du bei deiner Tante?
+8. Der Anruf ist von meinem Vermieter.
+9. Für wen kaufst du diese Blumen?
+10. Die Blumen sind für meine Lehrerin.
+11. Fährt er mit dem Fahrrad oder mit der Straßenbahn?
+12. Er fährt mit dem Fahrrad zum Bahnhof.
+13. Sie geht ohne ihre Kinder ins Kino.
+14. Ich bringe das Buch zu meinem Freund.
+15. Kannst du den Termin für mich verschieben?
+16. Ja, ich verschiebe ihn für dich auf Montag.
+17. Von wem hast du das gehört?
+18. Ich habe es von meiner Kollegin gehört.
+19. Er gibt der Lehrerin das Formular.
+20. Seit wann lernst du Klavier? — Seit einem Jahr.
+21. Ich warte seit einer Stunde auf den Bus.
+22. Das Mädchen geht mit seinem Hund durch den Park.
+23. Ich muss ein Paket von der Post abholen.
+24. Bist du zufrieden mit deinem Deutschkurs?
+25. Sie bestellt einen Salat ohne Zwiebeln.
+26. Der Schlüssel ist für den Briefkasten.
+27. Wir gehen nach dem Essen zum Spielplatz.
+28. Ich schicke meiner Schwester eine Postkarte aus Berlin.
+29. Er holt seine Tochter von der Schule ab.
+30. Ohne Fahrkarte darfst du nicht mit dem Zug fahren.
+
+---
+
+## Lista słów i fraz
+
+| Niemiecki | Polski |
+|----------|---------|
+| durch (+ Akk) | przez |
+| für (+ Akk) | dla |
+| ohne (+ Akk) | bez |
+| um (+ Akk) | wokół |
+| aus (+ Dat) | z (skąd) |
+| bei (+ Dat) | u, przy |
+| mit (+ Dat) | z (czymś, kimś) |
+| nach (+ Dat) | po; do (miasta/kraju) |
+| seit (+ Dat) | od (momentu w przeszłości) |
+| von (+ Dat) | od, z |
+| zu (+ Dat) | do (kogoś, czegoś) |
+| der Regenschirm | parasol |
+| der Briefkasten | skrzynka pocztowa |
+| der Spielplatz | plac zabaw |
+| die Postkarte | pocztówka |
+| die Zwiebel | cebula |
+| das Café | kawiarnia |
+| das Kino | kino |
+| verschieben | przesuwać (termin) |
+| schicken | wysyłać |

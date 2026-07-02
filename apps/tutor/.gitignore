@@ -1,0 +1,21 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Test artifacts
+playwright-report/
+test-results/
+
+# Stray binaries / images dropped at repo root (commit to public/ if needed)
+/*.jpg
+/*.png
+/*.jpeg
+
+# Per-user Claude Code permissions (settings.json is shared, .local is private)
+.claude/settings.local.json
+build-info.json

@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Telegram Mini App ----------------------------------------------------
+ *
+ * Defaults below match the existing web light theme so there's no color
+ * flash before TelegramThemeBridge runs on mount. The bridge overwrites
+ * these variables with Telegram's themeParams once the SDK reports them.
+ *
+ * [data-tma-hide] elements (TopBar, MobileBottomNav) hide when the
+ * <html data-tma="true"> attribute is present — set server-side from the
+ * `tma` cookie via middleware so there's no SSR/CSR mismatch and no
+ * post-hydration flicker.
+ * ------------------------------------------------------------------------ */
+:root {
+  --tg-bg: #ffffff;
+  --tg-text: #18181b;
+  --tg-hint: #71717a;
+  --tg-link: #2563eb;
+  --tg-button: #2563eb;
+  --tg-button-text: #ffffff;
+  --tg-secondary-bg: #f4f4f5;
+}
+html[data-tma="true"] body {
+  background: var(--tg-bg);
+  color: var(--tg-text);
+}
+html[data-tma="true"] [data-tma-hide],
+html[data-embed="true"] [data-tma-hide] {
+  display: none !important;
+}
+/* MainButton lives at the bottom of the Telegram WebView; the bottom-nav
+   padding the web app uses to clear the fixed nav is no longer needed.
+   Same rule applies for the iframe-embed mode used by the desktop modal:
+   no MobileBottomNav, no need to reserve bottom space. */
+html[data-tma="true"] main[data-app-main],
+html[data-embed="true"] main[data-app-main] {
+  padding-bottom: 1rem !important;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    /* Strict no-horizontal-scroll. `clip` (vs `hidden`) avoids creating a new
+       scroll container that breaks sticky headers. Safari 16+, all modern
+       Chromium/Firefox support it. */
+    overflow-x: clip;
+    /* Kill the horizontal rubber-band drag mobile browsers offer even when
+       nothing actually scrolls. Without this, iOS Safari / Android Chrome
+       let the user pan the page sideways a few pixels and snap back, which
+       reads as broken on a phone. */
+    overscroll-behavior-x: none;
+  }
+  body {
+    @apply bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100;
+    overflow-x: clip;
+    overscroll-behavior-x: none;
+    max-width: 100vw;
+  }
+}
+
+/* Markdown prose-ish styling */
+.prose-md {
+  @apply text-zinc-900 dark:text-zinc-100 leading-relaxed;
+  /* Long German compounds (Geschwindigkeitsbegrenzung) and unbroken URLs
+     must wrap rather than push the page wide. */
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  max-width: 100%;
+}
+.prose-md h2 {
+  @apply mt-10 mb-4 text-2xl font-semibold tracking-tight border-b border-zinc-200 dark:border-zinc-800 pb-2;
+}
+.prose-md h3 {
+  @apply mt-8 mb-3 text-xl font-semibold;
+}
+.prose-md h4 {
+  @apply mt-6 mb-2 text-lg font-semibold;
+}
+.prose-md p {
+  @apply my-3;
+}
+.prose-md ul {
+  @apply list-disc pl-6 my-3;
+}
+.prose-md ol {
+  @apply list-decimal pl-6 my-3;
+}
+.prose-md li {
+  @apply my-1;
+}
+.prose-md strong {
+  @apply font-semibold;
+}
+.prose-md em {
+  @apply italic;
+}
+.prose-md blockquote {
+  @apply border-l-4 border-amber-400 bg-amber-50 dark:bg-amber-950/30 pl-4 py-2 my-4 rounded-r;
+}
+.prose-md blockquote p {
+  @apply my-1;
+}
+.prose-md pre {
+  @apply bg-zinc-100 dark:bg-zinc-900 rounded-md p-4 my-4 overflow-x-auto font-mono text-sm leading-relaxed;
+  /* Cap to the parent's width so a wide language-matrix line scrolls inside
+     the pre block instead of pushing the page sideways. */
+  max-width: 100%;
+}
+.prose-md code {
+  @apply font-mono text-sm bg-zinc-100 dark:bg-zinc-900 px-1.5 py-0.5 rounded;
+}
+.prose-md pre code {
+  @apply bg-transparent p-0;
+}
+/* Tables: become independently horizontally-scrollable blocks so a wide row
+   never widens the surrounding article. Cells wrap aggressively. */
+.prose-md table {
+  @apply my-4 w-full text-sm border-collapse;
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.prose-md table th {
+  @apply text-left font-semibold py-2 px-3 border-b-2 border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900;
+  word-break: break-word;
+}
+.prose-md table td {
+  @apply py-2 px-3 border-b border-zinc-200 dark:border-zinc-800 align-top;
+  word-break: break-word;
+}
+.prose-md details {
+  @apply my-4 border border-zinc-200 dark:border-zinc-800 rounded-md;
+}
+.prose-md details summary {
+  @apply cursor-pointer select-none px-4 py-2 font-medium hover:bg-zinc-50 dark:hover:bg-zinc-900;
+}
+.prose-md details[open] summary {
+  @apply border-b border-zinc-200 dark:border-zinc-800;
+}
+.prose-md details > *:not(summary) {
+  @apply px-4 py-2;
+}
+.prose-md hr {
+  @apply my-8 border-zinc-200 dark:border-zinc-800;
+}
+.prose-md a {
+  @apply text-blue-600 dark:text-blue-400 underline-offset-2 hover:underline;
+}

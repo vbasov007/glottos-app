@@ -1,0 +1,31 @@
+{
+  "name": "glottos-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Unified monorepo: glottos courses + text tutor on one server with one user system.",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "db:init": "tsx migrations/run.ts",
+    "migrate:legacy": "tsx migrations/migrate_legacy_data.ts",
+    "dev:db": "docker compose -f deploy/docker-compose.dev.yml up -d",
+    "dev:courses": "npm run dev -w @glottos/courses",
+    "dev:tutor": "npm run dev -w @glottos/tutor",
+    "dev:tutor-server": "npm run server -w @glottos/tutor",
+    "build": "npm run build -w @glottos/courses && npm run build -w @glottos/tutor",
+    "build:courses": "npm run build -w @glottos/courses",
+    "build:tutor": "npm run build -w @glottos/tutor",
+    "start": "pm2 start deploy/ecosystem.config.cjs",
+    "test": "npm run test -w @glottos/shared && npm run test -w @glottos/courses && npm run test -w @glottos/tutor",
+    "test:shared": "npm run test -w @glottos/shared",
+    "lint": "npm run lint -w @glottos/courses && npm run lint -w @glottos/tutor"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

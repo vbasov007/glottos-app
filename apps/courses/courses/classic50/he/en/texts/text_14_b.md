@@ -1,0 +1,83 @@
+# Text for Lesson 14 (B): At work — decide, explain, invite, start
+
+**Theme: Hif'il at the office and in classes. Lehachlit, lehasbir, lehazmin, lehatchil, lehakhnis.**
+
+> The causative carries a lot of weight in business language: "make a decision", "run a meeting", "invite a client", "start a project". Here — workplace scenes.
+
+---
+
+## Listening text
+
+1. הֶחְלַטְתִּי לְהַתְחִיל לִלְמוֹד עִבְרִית.
+2. הוּא הֶחְלִיט לִנְסוֹעַ לְיִשְׂרָאֵל.
+3. הִיא הֶחְלִיטָה לָקַחַת חֻפְשָׁה.
+4. הִתְחַלְנוּ עֲבוֹדָה חֲדָשָׁה.
+5. הַפְּגִישָׁה מַתְחִילָה בְּתֵשַׁע.
+6. אֲנִי מַתְחִיל לַעֲבֹד בְּשֶׁבַע בַּבֹּקֶר.
+7. הַמְּנַהֵל הִסְבִּיר לָנוּ אֶת הַתָּכְנִית.
+8. הִיא מַסְבִּירָה לַלָּקוֹחוֹת אֶת הַמַּחִיר.
+9. אֲנַחְנוּ מַסְבִּירִים אֶת הָרַעְיוֹן לַצֶּוֶת.
+10. הַמְּנַהֵל הִזְמִין אֶת הַלָּקוֹחַ לַמִּשְׂרָד.
+11. אֲנִי מַזְמִינָה אוֹתְךָ לִפְגִישָׁה.
+12. הֵם הִזְמִינוּ אוֹתָנוּ לַכֶּנֶס.
+13. מַזְמִינִים שֻׁלְחָן בַּמִּסְעָדָה.
+14. הִיא הִזְמִינָה אֹכֶל לַמִּשְׂרָד.
+15. הֶחְלַטְנוּ לִפְתֹּחַ עֵסֶק חָדָשׁ.
+16. הַצֶּוֶת הִחְלִיט עַל הַתָּכְנִית.
+17. אֲנִי מַחְלִיט בְּעַצְמִי.
+18. הִיא מַחְלִיטָה מָה לַעֲשׂוֹת.
+19. הוּא הִכְנִיס אֶת הַמִּסְמָכִים לַתִּיק.
+20. אֲנִי מַכְנִיסָה אֶת הַכֶּסֶף לַבַּנְק.
+21. הַמַּזְכִּירָה הִכְנִיסָה אֶת הַלָּקוֹחַ לַחֶדֶר.
+22. הִתְחַלְתִּי לְהַסְבִּיר לוֹ אֶת הָעִנְיָן.
+23. הַמּוֹרֶה הִתְחִיל אֶת הַשִּׁעוּר בִּזְמַן.
+24. הִיא הִתְחִילָה לִכְתֹּב סֵפֶר חָדָשׁ.
+25. הַמְּנַהֵל הֵבִיא מַחְשֵׁב חָדָשׁ לַמִּשְׂרָד.
+26. הִיא הֶחְלִיטָה לְהַזְמִין אֶת כָּל הַחֲבֵרִים.
+27. אֲנַחְנוּ מַחְלִיטִים אֶת זֶה יַחַד.
+28. הוּא הִסְבִּיר לִי אֶת הַחֶשְׁבּוֹן.
+29. הַיְּשִׁיבָה מַתְחִילָה עַכְשָׁו.
+30. הִזְמַנְתִּי אוֹתָהּ לְאָרוּחַת צָהֳרַיִם.
+
+---
+
+## Word and phrase list
+
+| Hebrew | Translit | English |
+|--------|----------|---------|
+| לְהַחְלִיט | lehachlit | to decide |
+| מַחְלִיט / מַחְלִיטָה | machlit / machlita | decides (m./f.) |
+| הֶחְלִיט / הֶחְלִיטָה | hechlit / hechlita | decided (m./f.) |
+| הַחְלָטָה | hachlata | decision |
+| לְהַתְחִיל | lehatchil | to start |
+| מַתְחִיל / מַתְחִילָה | matchil / matchila | starts |
+| הִתְחִיל / הִתְחִילָה | hitchil / hitchila | started (m./f.) |
+| הַתְחָלָה | hatchala | beginning |
+| לְהַסְבִּיר | lehasbir | to explain |
+| לְהַזְמִין | lehazmin | to invite / order |
+| מַזְמִין / מַזְמִינָה | mazmin / mazmina | invites / orders |
+| הִזְמִין / הִזְמִינָה | hizmin / hizmina | invited / ordered |
+| הַזְמָנָה | hazmana | invitation / order |
+| לְהַכְנִיס | lehakhnis | to bring in |
+| מְנַהֵל | menahel | manager |
+| מַזְכִּירָה | mazkira | secretary (f.) |
+| צֶוֶת | tsevet | team |
+| לָקוֹחַ / לָקוֹחוֹת | lako'ach / lakochot | client / clients |
+| מִשְׂרָד | misrad | office |
+| פְּגִישָׁה | pgisha | meeting |
+| יְשִׁיבָה | yeshiva | meeting, sitting |
+| כֶּנֶס | kenes | conference |
+| תָּכְנִית | tokhnit | plan / program |
+| רַעְיוֹן | ra'ayon | idea |
+| עֵסֶק | esek | business |
+| חֻפְשָׁה | chufsha | vacation |
+| מַחְשֵׁב | machshev | computer |
+| מִסְמָךְ / מִסְמָכִים | mismakh / mismakhim | document / documents |
+| בַּנְק | bank | bank |
+| חֶשְׁבּוֹן | cheshbon | bill, account |
+| מַחִיר | mechir | price |
+| מִסְעָדָה | mis'ada | restaurant |
+| אֲרוּחַת צָהֳרַיִם | aruchat tsohorayim | lunch |
+| בִּזְמַן | bi-zman | on time |
+| בְּעַצְמִי | be-atsmi | by myself |
+| יַחַד | yachad | together |

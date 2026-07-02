@@ -1,0 +1,27 @@
+name: text-tutor
+services:
+  - name: web
+    dockerfile_path: Dockerfile
+    github:
+      repo: vbasov007/text-tutor
+      branch: main
+      deploy_on_push: true
+    http_port: 8080
+    instance_size_slug: basic-xxs
+    instance_count: 1
+    envs:
+      - key: GEMINI_API_KEY
+        scope: BUILD_TIME
+        type: SECRET
+      - key: GOOGLE_CLIENT_ID
+        scope: BUILD_TIME
+        type: SECRET
+      - key: DATABASE_URL
+        scope: RUN_TIME
+        type: SECRET
+      - key: NODE_ENV
+        scope: RUN_TIME
+        value: production
+      - key: PORT
+        scope: RUN_TIME
+        value: "8080"
