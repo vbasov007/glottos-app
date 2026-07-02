@@ -1,4 +1,30 @@
+# Env / secrets
 .env
 .env.*
 !.env.example
+
+# Read-only legacy reference (reproducible via clone; never committed)
+/legacy/
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build output
+apps/courses/.next/
+apps/courses/content/.generated/
+apps/tutor/dist/
+**/dist/
+*.tsbuildinfo
+
+# Test / tooling artifacts
+**/playwright-report/
+**/test-results/
+coverage/
+
+# Logs
 *.log
+npm-debug.log*
+
+# OS
+.DS_Store
