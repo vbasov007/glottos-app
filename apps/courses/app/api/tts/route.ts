@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { checkRateLimit, clientKey } from '../../../lib/rate-limit';
 import { resolveTts, synthesize } from '../../../lib/tts-providers';
 import { readTtsOverrides } from '../../../lib/tts-settings';
+import { stripSpokenSymbols } from '../../../lib/normalize';
 import type { TargetLang } from '../../../lib/content-types';
 
 export const runtime = 'nodejs';
@@ -19,7 +20,9 @@ export async function GET(req: Request): Promise<Response> {
   }
 
   const url = new URL(req.url);
-  const text = url.searchParams.get('text')?.trim();
+  // Drop symbols the voice would read aloud ("→", "✗", "∅"…). Central gate:
+  // every TTS request lands here regardless of which component asked for it.
+  const text = stripSpokenSymbols(url.searchParams.get('text') ?? '');
   if (!text) {
     return NextResponse.json({ error: 'missing_text' }, { status: 400 });
   }

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getCourseIndex, getCoursesForPair, getText } from '../../../../../../lib/content';
 import { CourseUnavailable } from '../../../../../../components/CourseUnavailable';
+import { TextRead } from '../../../../../../components/TextRead';
 import { locales } from '../../../../../../i18n/request';
 import {
   COURSES,
@@ -63,6 +64,7 @@ export default async function TextPage({
 
   return (
     <article className="py-6 md:py-10">
+      <TextRead course={crs} targetLang={tgt} nativeLang={lang} textN={n} variant={variant} />
       {/* Header */}
       <div className="text-xs text-zinc-500 mb-2">
         <Link

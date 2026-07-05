@@ -24,29 +24,63 @@ export function stripMarkdown(input: string): string {
   return input.replace(/[*_~`]/g, '');
 }
 
+// Visual symbols that a TTS engine reads out as a word ("→" → "rightwards
+// arrow") or otherwise mispronounces. In exercise text these are separators or
+// markers ("schnell → schneller", "✗ → …", "∅ article") that were never meant
+// to be spoken. Covers the Unicode arrow blocks plus a handful of standalone
+// marks (check/cross, empty-set, bullets, pipe). Replaced with a space so the
+// words on either side stay separated.
+const SPOKEN_SYMBOL_RE = new RegExp(
+  '[' +
+    '\\u2190-\\u21FF' + // Arrows                → ← ↔ ⇒ …
+    '\\u2794-\\u27BF' + // Dingbat arrows        ➔ ➜ ➡ …
+    '\\u27F0-\\u27FF' + // Supplemental Arrows-A
+    '\\u2900-\\u297F' + // Supplemental Arrows-B
+    '\\u2B00-\\u2BFF' + // Misc Symbols & Arrows ⬅ ⬆ …
+    '\\u2205' + //        ∅ empty set (the "no article" marker)
+    '\\u2022\\u2023\\u00B7\\u25AA\\u25CF\\u25B6' + // • ‣ · ▪ ● ▶
+    '\\u2713\\u2714\\u2717\\u2718\\u2611\\u2612' + // ✓ ✔ ✗ ✘ ☑ ☒
+    '\\u2705\\u274C\\uFE0F' + //                   ✅ ❌ + emoji variation selector
+    '\\|' + //            pipe separator
+    ']',
+  'g',
+);
+
+/**
+ * Strip symbols that don't belong in speech. Safe to run on any text headed
+ * for the TTS engine, regardless of whether it's a lesson answer, a dictionary
+ * headword, or a raw sentence.
+ */
+export function stripSpokenSymbols(input: string): string {
+  return input.replace(SPOKEN_SYMBOL_RE, ' ').replace(/\s+/g, ' ').trim();
+}
+
 /**
  * Text suitable for the TTS engine. Drops italic parentheticals — teaching
- * annotations like `*(e→ie)*` are written for the eye, not the ear — then
- * strips remaining markdown delimiters and collapses whitespace.
+ * annotations like `*(e→ie)*` are written for the eye, not the ear — strips
+ * remaining markdown delimiters and unreadable symbols, and collapses
+ * whitespace.
  *
  *   "Er **liest** jeden Abend die Zeitung. *(e→ie)*"
  *     → "Er liest jeden Abend die Zeitung."
+ *   "schnell → schneller → am schnellsten"
+ *     → "schnell schneller am schnellsten"
  */
 export function speakableText(input: string): string {
-  return stripMarkdown(
-    input
-      // "*(e→ie)*" — italicised inline annotation. Strip the asterisks
-      // along with the parens so no orphan ** survives stripMarkdown.
-      .replace(/\s*\*\([^)]*\)\*\s*/g, ' ')
-      // Any other parenthetical — typically a grammar marker like
-      // "(A)" / "(Dat)" / "(m)" embedded in an exercise canonical to
-      // call out the case or gender being drilled. Visual only; the
-      // TTS engine should pronounce the surrounding sentence as if the
-      // marker weren't there.
-      .replace(/\s*\([^)]*\)\s*/g, ' '),
-  )
-    .replace(/\s+/g, ' ')
-    .trim();
+  return stripSpokenSymbols(
+    stripMarkdown(
+      input
+        // "*(e→ie)*" — italicised inline annotation. Strip the asterisks
+        // along with the parens so no orphan ** survives stripMarkdown.
+        .replace(/\s*\*\([^)]*\)\*\s*/g, ' ')
+        // Any other parenthetical — typically a grammar marker like
+        // "(A)" / "(Dat)" / "(m)" embedded in an exercise canonical to
+        // call out the case or gender being drilled. Visual only; the
+        // TTS engine should pronounce the surrounding sentence as if the
+        // marker weren't there.
+        .replace(/\s*\([^)]*\)\s*/g, ' '),
+    ),
+  );
 }
 
 export function normalizeAnswer(input: string): string {

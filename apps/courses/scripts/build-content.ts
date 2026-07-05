@@ -826,6 +826,18 @@ async function parseText(
 const LETTER_HEADING_RE = /^\p{L}{1,3}$/u;
 const ARTICLE_RE = /^(der|die|das|sich)\s+/i;
 
+/** Normalize a German vocab entry to its dictionary lemma (the dedup key used
+ *  by parseDictionary). Shared so coverage matching uses the exact same rule
+ *  as the dictionary — otherwise "words seen" would fail to match entries. */
+function germanLemma(german: string): string {
+  return german
+    .replace(ARTICLE_RE, '')
+    .replace(/^sich\s+/i, '')
+    .replace(/\s*\((?:m|f|n|pl|Partizip\s*I+|Part\.\s*I+)\)\s*$/i, '')
+    .trim()
+    .toLowerCase();
+}
+
 async function parseDictionary(file: string, course: CourseSlug, courseKey: CourseKey): Promise<Dictionary> {
   const src = await readFile(file, 'utf8');
   const root = parseMd(src);
@@ -846,15 +858,7 @@ async function parseDictionary(file: string, course: CourseSlug, courseKey: Cour
     for (const t of tables) {
       const rows = parseVocabTable(t);
       for (const r of rows) {
-        const lemma = r.german
-          .replace(ARTICLE_RE, '')
-          .replace(/^sich\s+/i, '')
-          // Strip trailing gender / part-of-speech tags like "(m)" / "(f)" / "(n)" /
-          // "(pl)" / "(Part. II)" that some source rows include inside the German
-          // cell. Keeping them makes the lemma fail every substring/lookup match.
-          .replace(/\s*\((?:m|f|n|pl|Partizip\s*I+|Part\.\s*I+)\)\s*$/i, '')
-          .trim()
-          .toLowerCase();
+        const lemma = germanLemma(r.german);
         entries.push({
           german: r.german,
           lemma,
@@ -1074,6 +1078,79 @@ async function readCourseSummary(
 
 // --- main -------------------------------------------------------------------
 
+/**
+ * Emit content/.generated/<course>/<courseKey>/coverage.json — for each lesson
+ * and each listening text, the set of dictionary-lemma ids its vocabulary
+ * covers. The dashboard unions these over the lessons the learner completed
+ * and the texts they read to derive "words seen" as a true subset of the
+ * course dictionary. Ids index the unique lemmas of that pair's dictionary, so
+ * the union size is directly the count of distinct dictionary words seen.
+ */
+async function buildCoverage(): Promise<void> {
+  let courseDirs: string[];
+  try {
+    courseDirs = (await readdir(OUT_DIR)).filter((d) => COURSE_SLUGS.has(d as CourseSlug));
+  } catch {
+    return;
+  }
+  for (const course of courseDirs) {
+    const courseDir = path.join(OUT_DIR, course);
+    let courseKeys: string[];
+    try {
+      courseKeys = (await readdir(courseDir)).filter((d) => d.includes('.'));
+    } catch {
+      continue;
+    }
+    for (const courseKey of courseKeys) {
+      const [target, native] = courseKey.split('.');
+      const dictFile = path.join(OUT_DIR, '_shared', 'dictionaries', target!, `${native}.json`);
+      if (!existsSync(dictFile)) continue;
+      const dict = JSON.parse(await readFile(dictFile, 'utf8')) as { entries: { lemma: string }[] };
+      // Stable id per unique dictionary lemma.
+      const lemmaId = new Map<string, number>();
+      for (const e of dict.entries) if (!lemmaId.has(e.lemma)) lemmaId.set(e.lemma, lemmaId.size);
+
+      const coveredIds = (vocab?: { german: string }[]): number[] => {
+        const ids = new Set<number>();
+        for (const v of vocab ?? []) {
+          const id = lemmaId.get(germanLemma(v.german));
+          if (id !== undefined) ids.add(id);
+        }
+        return [...ids].sort((a, b) => a - b);
+      };
+
+      const keyDir = path.join(courseDir, courseKey);
+      const lessons: Record<string, number[]> = {};
+      const lessonsDir = path.join(keyDir, 'lessons');
+      if (existsSync(lessonsDir)) {
+        for (const f of (await readdir(lessonsDir)).filter((f) => f.endsWith('.json'))) {
+          const l = JSON.parse(await readFile(path.join(lessonsDir, f), 'utf8')) as {
+            n: number;
+            vocab?: { german: string }[];
+          };
+          lessons[String(l.n)] = coveredIds(l.vocab);
+        }
+      }
+      const texts: Record<string, number[]> = {};
+      const textsDir = path.join(keyDir, 'texts');
+      if (existsSync(textsDir)) {
+        for (const f of (await readdir(textsDir)).filter((f) => f.endsWith('.json'))) {
+          const tx = JSON.parse(await readFile(path.join(textsDir, f), 'utf8')) as {
+            n: number;
+            variant: string;
+            vocab?: { german: string }[];
+          };
+          texts[`${tx.n}-${tx.variant}`] = coveredIds(tx.vocab);
+        }
+      }
+      await writeFile(
+        path.join(keyDir, 'coverage.json'),
+        JSON.stringify({ lemmaCount: lemmaId.size, lessons, texts }),
+      );
+    }
+  }
+}
+
 async function main() {
   console.log(`Building content from ${COURSES_DIR} → ${OUT_DIR}`);
 
@@ -1263,6 +1340,10 @@ async function main() {
       }
     }
   }
+
+  // Per-course lemma coverage for the "words seen" dashboard metric. Runs last
+  // so every lesson/text JSON and the shared dictionaries already exist.
+  await buildCoverage();
 
   const manifest: ContentManifest = {
     builtAt: new Date().toISOString(),

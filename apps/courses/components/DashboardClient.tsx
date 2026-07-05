@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useProgressStore, RANK_THRESHOLDS, type RankName } from '../lib/store';
+import type { CourseCoverage } from '../lib/content';
 import type { CourseSlug, NativeLang, TargetLang } from '../lib/content-types';
 
 interface Props {
@@ -13,6 +14,8 @@ interface Props {
   totalTests: number;
   totalTexts: number;
   totalDictionaryEntries: number;
+  /** Dictionary-lemma ids per lesson and text — used to derive "words seen". */
+  coverage: CourseCoverage;
 }
 
 export function DashboardClient({
@@ -22,6 +25,7 @@ export function DashboardClient({
   totalLessons,
   totalTests,
   totalDictionaryEntries,
+  coverage,
 }: Props) {
   const t = useTranslations('dashboard');
   const tCommon = useTranslations('common');
@@ -43,7 +47,21 @@ export function DashboardClient({
   const testsPassed = courseState
     ? Object.values(courseState.tests).filter((t) => t.best / 30 >= 0.8).length
     : 0;
-  const wordsSeen = courseState?.seenWords.length ?? 0;
+  // Distinct dictionary words seen: union of lemma ids across every completed
+  // lesson and every listening text opened. Derived from progress state (not a
+  // stored counter) so it reflects activity from before this was wired.
+  const wordsSeen = (() => {
+    if (!courseState) return 0;
+    const seen = new Set<number>();
+    for (const [n, l] of Object.entries(courseState.lessons)) {
+      if (!l.completedAt) continue;
+      for (const id of coverage.lessons[n] ?? []) seen.add(id);
+    }
+    for (const textId of courseState.readTexts ?? []) {
+      for (const id of coverage.texts[textId] ?? []) seen.add(id);
+    }
+    return seen.size;
+  })();
   const streak = courseState?.streak.currentDays ?? 0;
   const ranksClaimed = new Set<RankName>(courseState?.ranks ?? []);
 

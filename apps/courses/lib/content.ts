@@ -80,6 +80,25 @@ export function getCourseIndex(course: CourseSlug, target: TargetLang, native: N
   return read<CourseIndex>(course, getCourseKey(target, native), 'index.json');
 }
 
+/** Dictionary-lemma coverage per lesson and per text, used to derive the
+ *  "words seen" metric. Ids index the unique lemmas of the pair's dictionary;
+ *  union the ids across completed lessons + read texts and take the size. */
+export interface CourseCoverage {
+  lemmaCount: number;
+  /** lesson number (as string) → dictionary-lemma ids it covers */
+  lessons: Record<string, number[]>;
+  /** "<n>-<variant>" → dictionary-lemma ids it covers */
+  texts: Record<string, number[]>;
+}
+
+export function getCourseCoverage(course: CourseSlug, target: TargetLang, native: NativeLang): CourseCoverage {
+  try {
+    return read<CourseCoverage>(course, getCourseKey(target, native), 'coverage.json');
+  } catch {
+    return { lemmaCount: 0, lessons: {}, texts: {} };
+  }
+}
+
 /** List the courses that have content for the given (target, native) pair.
  *  Reads the manifest and filters by target+native. Returns course slugs in
  *  the registry order from COURSES. */

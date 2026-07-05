@@ -10,7 +10,8 @@ const GENERATED_PER_LESSON_CAP = 5;
 // v1: courseKey = `${TargetLang}.${NativeLang}` (e.g. "de.ru")
 // v2: courseKey = `${CourseSlug}.${TargetLang}.${NativeLang}` (e.g. "classic50.de.ru")
 //     — multi-course support; v1 keys get migrated by prepending "classic50."
-const STATE_VERSION = 2;
+// v3: CourseState gained `readTexts` (dropped the unused `seenWords`).
+const STATE_VERSION = 3;
 const STORAGE_KEY = 'gl.v1.state';
 
 type CourseKey = `${CourseSlug}.${TargetLang}.${NativeLang}`;
@@ -75,7 +76,9 @@ export interface TestProgress {
 interface CourseState {
   lessons: Record<number, LessonProgress>;
   tests: Record<number, TestProgress>;
-  seenWords: string[];
+  /** Listening texts the learner has opened, as "<n>-<variant>" ids. Feeds
+   *  the "words seen" metric alongside completed lessons. */
+  readTexts: string[];
   streak: {
     lastDayISO: string;
     currentDays: number;
@@ -119,7 +122,7 @@ interface Actions {
   recordTestAttempt(courseKey: CourseKey, testN: number, attempt: TestAttempt): void;
   clearTestInProgress(courseKey: CourseKey, testN: number): void;
   claimRank(courseKey: CourseKey, rank: RankName): void;
-  addSeenWord(courseKey: CourseKey, germanLemma: string): void;
+  markTextRead(courseKey: CourseKey, textId: string): void;
   touchStreak(courseKey: CourseKey): void;
   setPrefs(prefs: Partial<ProgressState['prefs']>): void;
   resetAll(): void;
@@ -139,7 +142,7 @@ function emptyCourse(): CourseState {
   return {
     lessons: {},
     tests: {},
-    seenWords: [],
+    readTexts: [],
     streak: { lastDayISO: '', currentDays: 0, longestDays: 0 },
     ranks: [],
   };
@@ -429,14 +432,15 @@ export const useProgressStore = create<Store>()(
         });
       },
 
-      addSeenWord(courseKey, germanLemma) {
+      markTextRead(courseKey, textId) {
         set((s) => {
           const course = s.courses[courseKey] ?? emptyCourse();
-          if (course.seenWords.includes(germanLemma)) return s;
+          const readTexts = course.readTexts ?? [];
+          if (readTexts.includes(textId)) return s;
           return {
             courses: {
               ...s.courses,
-              [courseKey]: { ...course, seenWords: [...course.seenWords, germanLemma] },
+              [courseKey]: { ...course, readTexts: [...readTexts, textId] },
             },
           };
         });
@@ -493,6 +497,13 @@ export const useProgressStore = create<Store>()(
             }
           }
           state.courses = next as Record<CourseKey, CourseState>;
+        }
+        // v2 → v3: add readTexts; retire the never-populated seenWords.
+        if (from < 3 && state && state.courses) {
+          for (const course of Object.values(state.courses) as CourseState[]) {
+            if (!Array.isArray(course.readTexts)) course.readTexts = [];
+            delete (course as { seenWords?: unknown }).seenWords;
+          }
         }
         state.v = STATE_VERSION;
         return state;

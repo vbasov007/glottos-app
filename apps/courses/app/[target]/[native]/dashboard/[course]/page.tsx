@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { DashboardClient } from '../../../../../components/DashboardClient';
 import { CefrProgressBars } from '../../../../../components/CefrProgressBars';
-import { getCourseIndex, getCoursesForPair } from '../../../../../lib/content';
+import { getCourseIndex, getCoursesForPair, getCourseCoverage } from '../../../../../lib/content';
 import { CourseUnavailable } from '../../../../../components/CourseUnavailable';
 import { getAllCefrLevels } from '../../../../../lib/cefr-levels';
 import { locales } from '../../../../../i18n/request';
@@ -52,6 +52,11 @@ export default async function DashboardPage({
   }
 
   const idx = getCourseIndex(crs, tgt, lang);
+  // Dictionary-lemma coverage per lesson and text, so the client can derive
+  // "words seen" from the lessons it completed and the texts it read.
+  // Progress state lives only in the browser store (anonymous users don't
+  // sync), so this can't be counted server-side.
+  const coverage = getCourseCoverage(crs, tgt, lang);
   const t = await getTranslations({ locale: native, namespace: 'dashboard' });
   const tCefr = await getTranslations({ locale: native, namespace: 'cefr' });
   const cefrPerLesson = getAllCefrLevels(tgt);
@@ -84,6 +89,7 @@ export default async function DashboardPage({
         totalTests={idx.tests.length}
         totalTexts={idx.texts.length}
         totalDictionaryEntries={idx.dictionaryEntries}
+        coverage={coverage}
       />
 
       <div className="mt-8 text-sm">
